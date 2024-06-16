@@ -38,7 +38,7 @@
     ./plug/treesitter/treesitter-textobjects.nix
     ./plug/treesitter/treesitter.nix
 
-    ./plug/ui/alpha.nix
+    #./plug/ui/alpha.nix
     ./plug/ui/btw.nix
     ./plug/ui/bufferline.nix
     ./plug/ui/indent-blankline.nix
@@ -47,7 +47,7 @@
     #./plug/ui/precognition.nix
     ./plug/ui/telescope.nix
 
-    # ./plug/utils/harpoon.nix
+    #./plug/utils/harpoon.nix
     ./plug/utils/comment.nix
     ./plug/utils/copilot.nix
     ./plug/utils/flash.nix
@@ -61,8 +61,6 @@
     ./plug/utils/ufo.nix
     ./plug/utils/undotree.nix
     ./plug/utils/whichkey.nix
-    
-    ./plug/filetrees
   ];
   options = {
     theme = lib.mkOption {
