@@ -91,10 +91,13 @@ in {
         disableItalic = false;
         disableUnderline = false;
         transparentBackground = true;
+        term_colors = true;
         integrations = {
           cmp = true;
           noice = true;
           notify = true;
+          neotree = true;
+          harpoon = true;
           gitsigns = true;
           which_key = true;
           illuminate = {

@@ -34,6 +34,7 @@
       },
       special_table = {
         lazy = { "Plugins", "💤 " },
+        alpha = { "(•̀ᴗ•́)و", "ʙᴏᴏʙs " },
         TelescopePrompt = { "Telescope", "  " },
         oil = { "Oil", "󰏇 " },
         lazygit = { "LazyGit", " " },

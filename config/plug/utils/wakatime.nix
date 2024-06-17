@@ -1,5 +1,5 @@
 {
-  plugins.trouble = {
+  plugins.wakatime = {
     enable = true;
   };
 }

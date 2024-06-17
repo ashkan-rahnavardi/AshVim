@@ -1,7 +1,7 @@
 {
   imports = [
     # ./telescope.nix
-    ./btw.nix
+    # ./btw.nix
     ./alpha.nix
     ./noice.nix
     ./bufferline.nix
