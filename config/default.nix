@@ -11,9 +11,9 @@
     # ./plug/colorscheme/biscuit.nix
     ./plug/colorscheme/colorscheme.nix
 
-    ./bufferlines
-    ./completion
-    ./git
+    ./plug/bufferlines
+    ./plug/completion
+    ./plug/git
 
     ./plug/lsp/conform.nix
     ./plug/lsp/fidget.nix

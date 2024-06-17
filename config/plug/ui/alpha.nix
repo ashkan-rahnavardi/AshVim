@@ -87,7 +87,7 @@
             mkButton
             "q"
             "<CMD>qa<CR>"
-            "💣 Quit Neovim"
+            "💣 Quit AshVim"
             "String"
           )
         ];
