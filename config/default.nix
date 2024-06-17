@@ -21,6 +21,7 @@
     ./plug/snippets
     ./plug/statusline
     ./plug/telescope
+    ./plug/ui
 
     # ./plug/lsp/conform.nix
     # ./plug/lsp/fidget.nix
@@ -39,14 +40,14 @@
     # ./plug/treesitter/treesitter-textobjects.nix
     # ./plug/treesitter/treesitter.nix
 
-    ./plug/ui/alpha.nix
-    ./plug/ui/btw.nix
-    ./plug/ui/bufferline.nix
-    ./plug/ui/indent-blankline.nix
-    ./plug/ui/noice.nix
-    ./plug/ui/nvim-notify.nix
-    #./plug/ui/precognition.nix
-    ./plug/ui/telescope.nix
+    # ./plug/ui/alpha.nix
+    # ./plug/ui/btw.nix
+    # ./plug/ui/bufferline.nix
+    # ./plug/ui/indent-blankline.nix
+    # ./plug/ui/noice.nix
+    # ./plug/ui/nvim-notify.nix
+    # #./plug/ui/precognition.nix
+    # ./plug/ui/telescope.nix
 
     # ./plug/utils/harpoon.nix
     ./plug/utils/comment.nix
