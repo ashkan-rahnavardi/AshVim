@@ -11,15 +11,9 @@
     # ./plug/colorscheme/biscuit.nix
     ./plug/colorscheme/colorscheme.nix
 
-    ./plug/completion/cmp.nix
-    ./plug/completion/copilot-cmp.nix
-    ./plug/completion/lspkind.nix
-    ./plug/completion/schemastore.nix
-
-    ./plug/git/gitlinker.nix
-    ./plug/git/gitsigns.nix
-    ./plug/git/lazygit.nix
-    ./plug/git/worktree.nix
+    ./bufferlines
+    ./completion
+    ./git
 
     ./plug/lsp/conform.nix
     ./plug/lsp/fidget.nix

@@ -3,27 +3,7 @@
     enable = true;
     settings = {
       trouble = true;
-      current_line_blame = true;
-      signs = {
-        add = {
-          text = "│";
-        };
-        change = {
-          text = "│";
-        };
-        delete = {
-          text = "_";
-        };
-        topdelete = {
-          text = "‾";
-        };
-        changedelete = {
-          text = "~";
-        };
-        untracked = {
-          text = "│";
-        };
-      };
+      current_line_blame = false;
     };
   };
   keymaps = [
@@ -56,11 +36,38 @@
     }
     {
       mode = "n";
+      key = "<leader>ghp";
+      action = ":Gitsigns preview_hunk<CR>";
+      options = {
+        silent = true;
+        desc = "Preview hunk";
+      };
+    }
+    {
+      mode = "n";
       key = "<leader>ghR";
       action = ":Gitsigns reset_buffer<CR>";
       options = {
         silent = true;
         desc = "Reset Buffer";
+      };
+    }
+    {
+      mode = ["n" "v"];
+      key = "<leader>ghr";
+      action = ":Gitsigns reset_hunk<CR>";
+      options = {
+        silent = true;
+        desc = "Reset Hunk";
+      };
+    }
+    {
+      mode = ["n" "v"];
+      key = "<leader>ghs";
+      action = ":Gitsigns stage_hunk<CR>";
+      options = {
+        silent = true;
+        desc = "Stage Hunk";
       };
     }
     {
@@ -70,6 +77,15 @@
       options = {
         silent = true;
         desc = "Stage Buffer";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>ghu";
+      action = ":Gitsigns undo_stage_hunk<CR>";
+      options = {
+        silent = true;
+        desc = "Undo Stage Hunk";
       };
     }
   ];
