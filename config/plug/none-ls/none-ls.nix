@@ -1,6 +1,6 @@
 {
   plugins.none-ls = {
-    enable = false;
+    enable = true;
     enableLspFormat = false;
     updateInInsert = false;
     onAttach = ''

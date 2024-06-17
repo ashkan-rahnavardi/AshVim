@@ -1,7 +1,7 @@
 {
   plugins = {
     lsp-format = {
-      enable = false; # Enable it if you want lsp-format integration for none-ls
+      enable = true; # enable it if you want lsp-format integration for none-ls
     };
     lsp = {
       enable = true;
@@ -56,6 +56,7 @@
           };
         };
         eslint = {enable = true;};
+
         pyright = {enable = true;};
         ruff-lsp = {enable = true;};
 

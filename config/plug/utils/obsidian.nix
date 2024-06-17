@@ -1,6 +1,6 @@
 {lib, ...}: {
   plugins.obsidian = {
-    enable = lib.mkDefault false;
+    enable = lib.mkDefault true;
     settings = {
       completion = {
         min_chars = 2;
