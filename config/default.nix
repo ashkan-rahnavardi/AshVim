@@ -14,23 +14,30 @@
     ./plug/bufferlines
     ./plug/completion
     ./plug/git
+    ./plug/dap
+    ./plug/languages
+    ./plug/lsp
+    ./plug/none-ls
+    ./plug/snippets
+    ./plug/statusline
+    ./plug/telescope
 
-    ./plug/lsp/conform.nix
-    ./plug/lsp/fidget.nix
-    ./plug/lsp/hlchunk.nix
-    ./plug/lsp/lsp.nix
-    ./plug/lsp/lspsaga.nix
-    ./plug/lsp/none-ls.nix
-    ./plug/lsp/trouble.nix
-
-    ./plug/snippets/luasnip.nix
-
-    ./plug/statusline/lualine.nix
-    #./plug/statusline/staline.nix
-
-    #./plug/treesitter/treesitter-context.nix
-    ./plug/treesitter/treesitter-textobjects.nix
-    ./plug/treesitter/treesitter.nix
+    # ./plug/lsp/conform.nix
+    # ./plug/lsp/fidget.nix
+    # ./plug/lsp/hlchunk.nix
+    # ./plug/lsp/lsp.nix
+    # ./plug/lsp/lspsaga.nix
+    # ./plug/lsp/none-ls.nix
+    # ./plug/lsp/trouble.nix
+    #
+    # ./plug/snippets/luasnip.nix
+    #
+    # ./plug/statusline/lualine.nix
+    # #./plug/statusline/staline.nix
+    #
+    # #./plug/treesitter/treesitter-context.nix
+    # ./plug/treesitter/treesitter-textobjects.nix
+    # ./plug/treesitter/treesitter.nix
 
     ./plug/ui/alpha.nix
     ./plug/ui/btw.nix
