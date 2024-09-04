@@ -26,7 +26,7 @@
     ./illuminate.nix
     ./mini.nix
     # ./nvim-autopairs.nix
-    ./obsidian.nix
+    # ./obsidian.nix
     ./oil.nix
     ./ufo.nix
     ./undotree.nix
