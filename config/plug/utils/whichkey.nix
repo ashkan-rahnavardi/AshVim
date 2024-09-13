@@ -1,7 +1,8 @@
 {
   plugins.which-key = {
     enable = true;
-    ignoreMissing = false;
+
+    settings.ignoreMissing = false;
     icons = {
       breadcrumb = "»";
       group = "+";
