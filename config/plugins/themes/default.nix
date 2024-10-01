@@ -1,3 +1,12 @@
+# {
+#   colorschemes = {
+#     rose-pine.enable = true;
+#
+#     # tokyonight = {
+#     #   enable = true;
+#     # };
+#   };
+# }
 {
   colorschemes = {
     catppuccin = {
@@ -5,7 +14,7 @@
       settings = {
         background = {
           light = "macchiato";
-          dark = "mocha";
+          dark = "macchiato";
         };
         custom_highlights = ''
           function(highlights)
