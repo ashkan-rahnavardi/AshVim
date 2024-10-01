@@ -1,7 +1,7 @@
 {
   imports = [
     ./cmp.nix
-    ./copilot.nix
+    # ./copilot.nix
     ./lspkind.nix
   ];
 }
