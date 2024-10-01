@@ -39,15 +39,23 @@
         };
 
         mapping = {
-          "<C-Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
+          "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
           "<C-j>" = "cmp.mapping.select_next_item()";
           "<C-k>" = "cmp.mapping.select_prev_item()";
           "<C-e>" = "cmp.mapping.abort()";
-          "<C-b>" = "cmp.mapping.scroll_docs(-4)";
+          "<C-d>" = "cmp.mapping.scroll_docs(-4)";
           "<C-f>" = "cmp.mapping.scroll_docs(4)";
           "<C-Space>" = "cmp.mapping.complete()";
           "<C-CR>" = "cmp.mapping.confirm({ select = true })";
           "<S-CR>" = "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })";
+          # Added mapping for opening documentation URL
+          "<C-u>" = {
+            __raw = ''
+              cmp.mapping(function(fallback)
+                OpenCmpDocumentationURL()
+              end, {'i', 's'})
+            '';
+          };
         };
       };
     };
@@ -58,59 +66,107 @@
     cmp-cmdline = {enable = false;}; # autocomplete for cmdline
   };
   extraConfigLua = ''
-        luasnip = require("luasnip")
-        kind_icons = {
-          Text = "󰊄",
-          Method = " ",
-          Function = "󰡱 ",
-          Constructor = " ",
-          Field = " ",
-          Variable = "󱀍 ",
-          Class = " ",
-          Interface = " ",
-          Module = "󰕳 ",
-          Property = " ",
-          Unit = " ",
-          Value = " ",
-          Enum = " ",
-          Keyword = " ",
-          Snippet = " ",
-          Color = " ",
-          File = "",
-          Reference = " ",
-          Folder = " ",
-          EnumMember = " ",
-          Constant = " ",
-          Struct = " ",
-          Event = " ",
-          Operator = " ",
-          TypeParameter = " ",
-        } 
+    local luasnip = require("luasnip")
+    local kind_icons = {
+      Text = "󰊄",
+      Method = " ",
+      Function = "󰡱 ",
+      Constructor = " ",
+      Field = " ",
+      Variable = "󱀍 ",
+      Class = " ",
+      Interface = " ",
+      Module = "󰕳 ",
+      Property = " ",
+      Unit = " ",
+      Value = " ",
+      Enum = " ",
+      Keyword = " ",
+      Snippet = " ",
+      Color = " ",
+      File = "",
+      Reference = " ",
+      Folder = " ",
+      EnumMember = " ",
+      Constant = " ",
+      Struct = " ",
+      Event = " ",
+      Operator = " ",
+      TypeParameter = " ",
+    }
 
-         local cmp = require'cmp'
+    local cmp = require("cmp")
 
-     -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-     cmp.setup.cmdline({'/', "?" }, {
-       sources = {
-         { name = 'buffer' }
-       }
-     })
+    -- Function to open the documentation URL of the selected completion item
+    function OpenCmpDocumentationURL()
+      local entry = cmp.get_selected_entry()
+      if not entry then
+        print("No completion item selected")
+        return
+      end
+
+      -- Fetch the documentation of the selected entry
+      local documentation = entry.documentation or entry:get_documentation()
+      if not documentation then
+        print("No documentation available for this item")
+        return
+      end
+
+      -- Convert documentation to a single string
+      local text = ""
+      if type(documentation) == "string" then
+        text = documentation
+      elseif type(documentation) == "table" then
+        text = table.concat(documentation, "\n")
+      end
+
+      -- Extract URLs from the documentation
+      local urls = {}
+      for url in string.gmatch(text, "(https?://[%w%p]+)") do
+        table.insert(urls, url)
+      end
+
+      if #urls == 0 then
+        print("No URLs found in documentation")
+      else
+        -- Open the first URL found
+        local url = urls[1]
+        local open_cmd
+        if vim.fn.has("mac") == 1 then
+          open_cmd = "open"
+        elseif vim.fn.has("unix") == 1 then
+          open_cmd = "xdg-open"
+        else
+          print("Cannot open URL on this OS")
+          return
+        end
+        vim.fn.jobstart({open_cmd, url}, {detach = true})
+      end
+    end
+
+    -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+    cmp.setup.cmdline({"/", "?" }, {
+      sources = {
+        { name = "buffer" }
+      }
+    })
 
     -- Set configuration for specific filetype.
-     cmp.setup.filetype('gitcommit', {
-       sources = cmp.config.sources({
-         { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-       }, {
-         { name = 'buffer' },
-       })
-     })
+    cmp.setup.filetype("gitcommit", {
+      sources = cmp.config.sources({
+        { name = "cmp_git" }, -- You can specify the `cmp_git` source if you installed it.
+      }, {
+        { name = "buffer" },
+      })
+    })
 
-     -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-     cmp.setup.cmdline(':', {
-       sources = cmp.config.sources({
-         { name = 'path' }
-       }, {
-         { name = 'cmdline' }
-       }),
-     })  '';
+    -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+    cmp.setup.cmdline(":", {
+      sources = cmp.config.sources({
+        { name = "path" }
+      }, {
+        { name = "cmdline" }
+      }),
+    })
+  '';
 }
