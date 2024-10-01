@@ -1,45 +1,56 @@
-{
-  config,
-  lib,
-  ...
-}: {
+_: {
   imports = [
-    ./keys.nix
-    ./sets.nix
-    ./highlight.nix
+    # General Configuration
+    ./settings.nix
+    ./keymaps.nix
+    ./auto_cmds.nix
+    ./file_types.nix
 
-    # ./plug/colorscheme/biscuit.nix
-    ./plug/colorscheme/colorscheme.nix
+    # Themes
+    ./plugins/themes/default.nix
 
-    ./plug/bufferlines
-    ./plug/completion
-    ./plug/git
-    ./plug/dap
-    ./plug/languages
-    ./plug/lsp
-    ./plug/none-ls
-    ./plug/snippets
-    ./plug/statusline
-    ./plug/telescope
-    ./plug/ui
-    ./plug/utils
-    ./plug/filetrees
+    # Completion
+    ./plugins/cmp/cmp.nix
+    ./plugins/cmp/cmp-copilot.nix
+    ./plugins/cmp/lspkind.nix
+    ./plugins/cmp/autopairs.nix
+    ./plugins/cmp/schemastore.nix
+
+    # Snippets
+    ./plugins/snippets/luasnip.nix
+
+    # Editor plugins and configurations
+    ./plugins/editor/neo-tree.nix
+    ./plugins/editor/treesitter.nix
+    ./plugins/editor/undotree.nix
+    ./plugins/editor/illuminate.nix
+    ./plugins/editor/indent-blankline.nix
+    ./plugins/editor/todo-comments.nix
+    ./plugins/editor/copilot-chat.nix
+    ./plugins/editor/navic.nix
+
+    # UI plugins
+    ./plugins/ui/bufferline.nix
+    ./plugins/ui/lualine.nix
+    # ./plugins/ui/startup.nix
+    ./plugins/ui/alpha.nix
+
+    # LSP and formatting
+    ./plugins/lsp/lsp.nix
+    ./plugins/lsp/conform.nix
+    ./plugins/lsp/fidget.nix
+
+    # Git
+    ./plugins/git/lazygit.nix
+    ./plugins/git/gitsigns.nix
+
+    # Utils
+    ./plugins/utils/telescope.nix
+    ./plugins/utils/whichkey.nix
+    ./plugins/utils/extra_plugins.nix
+    ./plugins/utils/mini.nix
+    ./plugins/utils/markdown-preview.nix
+    ./plugins/utils/obsidian.nix
+    ./plugins/utils/toggleterm.nix
   ];
-  options = {
-    theme = lib.mkOption {
-      default = "paradise";
-      type = lib.types.enum ["paradise" "decay" "mountain" "tokyonight" "everforest" "everblush" "jellybeans" "aquarium" "gruvbox"];
-    };
-    assistant = lib.mkOption {
-      default = "none";
-      type = lib.types.enum ["copilot" "none"];
-    };
-  };
-  config = {
-    # The base16 theme to use, if you want to use another theme, change it in colorscheme.nix
-    theme = "paradise";
-    extraConfigLua = ''
-      _G.theme = "${config.theme}"
-    '';
-  };
 }
