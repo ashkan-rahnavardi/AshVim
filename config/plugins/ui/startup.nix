@@ -90,7 +90,7 @@
           ]
           [
             "󰧑 SecondBrain"
-            "edit ~/projects/personal/SecondBrain"
+            "edit ~/Documents/Notes/To Do.md"
             "sb"
           ]
         ];
