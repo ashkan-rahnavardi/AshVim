@@ -13,7 +13,8 @@
       defaults = {
         layout_config = {
           horizontal = {
-            prompt_position = "top";
+            prompt_position = "bottom";
+            preview_width = 0.6;
           };
         };
         sorting_strategy = "ascending";
