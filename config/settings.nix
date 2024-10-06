@@ -14,6 +14,8 @@
     };
 
     opts = {
+      conceallevel = 2;
+
       # Show line numbers
       number = true;
 
