@@ -26,9 +26,9 @@
     {
       mode = "n";
       key = "<leader>oo";
-      action = "<cmd>ObsidianOpen<CR>";
+      action = "<cmd>ObsidianQuickSwitch<CR>";
       options = {
-        desc = "Open Obsidian Vault";
+        desc = "ObsidianQuickSwitch: quickly switch to (or open) another note in your vault, searching by its name using ripgrep";
       };
     }
   ];
