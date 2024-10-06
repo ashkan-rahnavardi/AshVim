@@ -1,6 +1,6 @@
 {
   plugins.obsidian = {
-    enable = false;
+    enable = true;
     settings = {
       workspaces = [
         {
@@ -22,4 +22,14 @@
       # };
     };
   };
+  keymaps = [
+    {
+      mode = "n";
+      key = "<leader>oo";
+      action = "<cmd>ObsidianOpen<CR>";
+      options = {
+        desc = "Open Obsidian Vault";
+      };
+    }
+  ];
 }
