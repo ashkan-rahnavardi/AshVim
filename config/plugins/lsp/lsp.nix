@@ -7,6 +7,7 @@
       enable = true;
       inlayHints = true;
       servers = {
+        phpactor = {enable = true;};
         html = {enable = true;};
         lua-ls = {enable = true;};
         nil-ls = {enable = true;};

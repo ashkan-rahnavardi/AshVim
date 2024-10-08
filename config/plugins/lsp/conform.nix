@@ -105,6 +105,7 @@
             "black"
             "isort"
           ];
+          php = ["php"];
           lua = ["stylua"];
           nix = ["alejandra"];
           markdown = [
@@ -131,6 +132,18 @@
         };
 
         formatters = {
+          php = {
+            command = "${lib.getExe pkgs.php82Packages.php-cs-fixer}";
+            args = ["fix" "$FILENAME"];
+            stdin = false;
+            # args = ''
+            #   {
+            #   "fix",
+            #   "$FILENAME",
+            #   }
+            # '';
+            # stdin = "false";
+          };
           black = {
             command = "${lib.getExe pkgs.black}";
           };
