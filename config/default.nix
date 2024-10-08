@@ -48,7 +48,7 @@ _: {
     # Utils
     ./plugins/utils/telescope.nix
     ./plugins/utils/whichkey.nix
-    ./plugins/utils/extra_plugins.nix
+    ./plugins/utils/web-devicons.nix
     ./plugins/utils/mini.nix
     ./plugins/utils/markdown-preview.nix
     ./plugins/utils/obsidian.nix
