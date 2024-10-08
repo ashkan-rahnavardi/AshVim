@@ -47,6 +47,7 @@ _: {
 
     # Utils
     ./plugins/utils/telescope.nix
+    ./plugins/utils/tmux-navigator.nix
     ./plugins/utils/whichkey.nix
     ./plugins/utils/web-devicons.nix
     ./plugins/utils/mini.nix
