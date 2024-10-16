@@ -73,7 +73,6 @@
     };
   };
   extraPlugins = with pkgs.vimPlugins; [
-    php
     phpactor
   ];
 
