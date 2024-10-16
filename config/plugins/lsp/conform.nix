@@ -92,7 +92,7 @@
           javascript = [
             [
               "prettierd"
-              "prettier"
+              # "prettier"
             ]
           ];
           typescript = [
