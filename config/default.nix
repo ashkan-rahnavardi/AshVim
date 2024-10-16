@@ -40,7 +40,7 @@ _: {
     ./plugins/lsp/lsp.nix
     ./plugins/lsp/conform.nix
     ./plugins/lsp/fidget.nix
-    ./plugins/lsp/lint.nix
+    # ./plugins/lsp/lint.nix
 
     # Git
     ./plugins/git/lazygit.nix
