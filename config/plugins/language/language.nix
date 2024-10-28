@@ -47,10 +47,10 @@ in
         };
       };
       lsp.servers.eslint.enable = true;
-      none-ls.sources.formatting.prettier = {
-        enable = true;
-        disableTsServerFormatter = false;
-      };
+      # none-ls.sources.formatting.prettier = {
+      #   # enable = true;
+      #   disableTsServerFormatter = false;
+      # };
       cmp = {
         enable = true;
         settings = {
@@ -195,6 +195,7 @@ in
           just.enable = true;
           opentofu_fmt.enable = true;
           prettier.enable = true;
+          prettier.disableTsServerFormatter = false;
           # rubyfmt is broken on darwin-based systems
           rubyfmt.enable = (
             pkgs.stdenv.hostPlatform.system
