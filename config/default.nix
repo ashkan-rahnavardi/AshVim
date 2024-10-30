@@ -13,11 +13,11 @@ _: {
     # ./plugins/language/language.nix
 
     # Completion
-    ./plugins/cmp/cmp.nix
-    ./plugins/cmp/cmp-copilot.nix
-    ./plugins/cmp/lspkind.nix
-    ./plugins/cmp/autopairs.nix
-    ./plugins/cmp/schemastore.nix
+    # ./plugins/cmp/cmp.nix
+    # ./plugins/cmp/cmp-copilot.nix
+    # ./plugins/cmp/lspkind.nix
+    # ./plugins/cmp/autopairs.nix
+    # ./plugins/cmp/schemastore.nix
 
     # Snippets
     ./plugins/snippets/luasnip.nix
@@ -40,10 +40,12 @@ _: {
     # ./plugins/ui/alpha.nix
 
     # LSP and formatting
-    ./plugins/lsp/lsp.nix
-    ./plugins/lsp/conform.nix
-    ./plugins/lsp/fidget.nix
+    # ./plugins/lsp/lsp.nix
+    # ./plugins/lsp/conform.nix
+    # ./plugins/lsp/fidget.nix
     # ./plugins/lsp/lint.nix
+
+    ./plugins/lsp
 
     # Git
     ./plugins/git/lazygit.nix
