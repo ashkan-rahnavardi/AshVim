@@ -1,21 +1,22 @@
-{ pkgs, ... }:
-let
-  inherit (pkgs)
-    gofumpt
+{pkgs, ...}: let
+  inherit
+    (pkgs)
+    # gofumpt
+    
     stylua
     ruff
     prettierd
     nixpkgs-fmt
-    terraform;
-in
-{
+    ;
+  # terraform;
+in {
   extraPackages = [
-    gofumpt
+    # gofumpt
     stylua
     ruff
     prettierd
     nixpkgs-fmt
-    terraform
+    # terraform
   ];
 
   extraConfigLua = ''
@@ -27,15 +28,15 @@ in
   plugins.conform-nvim = {
     enable = true;
     formattersByFt = {
-      go = [ "gofumpt" ];
-      lua = [ "stylua" ];
-      python = [ "ruff_format" "ruff_fix" "isort" "black" ];
-      javascript = [ "prettierd" ];
-      typescript = [ "prettierd" ];
-      nix = [ "nixpkgs_fmt" ];
-      tf = [ "terraform_fmt" ];
-      "_" = [ "trim_whitespace" ];
-      jsonnet = [ "jsonnetfmt" ];
+      # go = [ "gofumpt" ];
+      lua = ["stylua"];
+      python = ["ruff_format" "ruff_fix" "isort" "black"];
+      javascript = ["prettierd"];
+      typescript = ["prettierd"];
+      nix = ["nixpkgs_fmt"];
+      # tf = [ "terraform_fmt" ];
+      "_" = ["trim_whitespace"];
+      jsonnet = ["jsonnetfmt"];
     };
   };
 }

@@ -1,6 +1,5 @@
-{ ... }:
-{
-  imports = [ ./cmp.nix ./dap.nix ./formatter.nix ];
+{...}: {
+  imports = [./cmp.nix ./dap.nix ./formatter.nix];
 
   plugins = {
     lsp = {
@@ -24,31 +23,31 @@
       };
 
       servers = {
-        astro.enable = true;
+        # astro.enable = true;
         bashls.enable = true;
         cssls.enable = true;
         dockerls.enable = true;
-        gopls.enable = true;
+        # gopls.enable = true;
         html.enable = true;
         jsonls.enable = true;
         jsonnet-ls.enable = true;
         lua-ls.enable = true;
         nixd.enable = true;
-        nickel-ls.enable = true;
-        ocamllsp.enable = true;
-        prismals.enable = true;
+        # nickel-ls.enable = true;
+        # ocamllsp.enable = true;
+        # prismals.enable = true;
         pyright = {
           enable = true;
           settings = {
             pyright.disableOrganizeImports = true;
           };
         };
-        ruff.enable = true;
-        terraformls.enable = true;
+        # ruff.enable = true;
+        # terraformls.enable = true;
         tsserver.enable = true;
-        volar.enable = true;
+        # volar.enable = true;
         yamlls.enable = true;
-        zls.enable = true;
+        # zls.enable = true;
       };
     };
 
