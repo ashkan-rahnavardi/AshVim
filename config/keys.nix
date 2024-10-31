@@ -179,6 +179,12 @@
   keymaps = [
     # Normal mode
     {
+      mode = "n";
+      key = "<leader>qq";
+      action = "<cmd>qa<cr>";
+      options = {desc = "Quit All";};
+    }
+    {
       mode = "i";
       key = "jk";
       action = "<CMD>noh<CR><ESC>";

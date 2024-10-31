@@ -28,6 +28,7 @@
           module = {pkgs, ...}: {
             imports = [
               ./config
+              ./config/javascript
             ];
             extraPackages = with pkgs; [sops];
           };
