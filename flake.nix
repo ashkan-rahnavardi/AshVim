@@ -28,8 +28,6 @@
           module = {pkgs, ...}: {
             imports = [
               ./config
-              ./config/javascript
-              ./config/python
             ];
             extraPackages = with pkgs; [sops];
           };
