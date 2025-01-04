@@ -19,6 +19,11 @@
     };
     lsp.servers.phpactor = {
       enable = true;
+      rootDir = ''
+        function(fname)
+          return vim.fn.getcwd()
+        end
+      '';
     };
   };
 }

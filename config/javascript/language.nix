@@ -56,7 +56,14 @@
       };
     };
     lsp.servers = {
-      phpactor.enable = true;
+      phpactor = {
+        enable = true;
+        rootDir = ''
+          function(fname)
+            return vim.fn.getcwd()
+          end
+        '';
+      };
       eslint.enable = true;
     };
     none-ls.sources.formatting.prettier = {
