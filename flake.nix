@@ -92,6 +92,19 @@
           };
           extraSpecialArgs = {};
         };
+        phpNixvimModule = {
+          inherit pkgs;
+          module = {pkgs, ...}: {
+            imports = [
+              ./config
+              ./config/php
+            ];
+            php = with pkgs; [
+              php82Packages.php-cs-fixer
+            ];
+          };
+          extraSpecialArgs = {};
+        };
         # iacNixvimModule = {
         #   inherit pkgs;
         #   module = {pkgs, ...}: {
@@ -113,6 +126,7 @@
         goNvim = nixvim'.makeNixvimWithModule goNixvimModule;
         pythonNvim = nixvim'.makeNixvimWithModule pythonNixvimModule;
         javascriptNvim = nixvim'.makeNixvimWithModule javascriptNixvimModule;
+        phpNvim = nixvim'.makeNixvimWithModule phpNixvimModule;
         # iacNvim = nixvim'.makeNixvimWithModule iacNixvimModule;
       in {
         checks = {
@@ -134,6 +148,7 @@
           javascript = javascriptNvim;
           # Lets you run `nix run .#javascript` to start nixvim with IaC configuration
           # iac = iacNvim;
+          php = phpNvim;
         };
       };
     };

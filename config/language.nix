@@ -178,6 +178,7 @@ in
             json = ["prettier"];
             just = ["just"];
             lua = ["stylua"];
+            # php = ["php"];
             markdown = ["prettier"];
             nix = ["alejandra"];
             ruby = ["rubyfmt"];
