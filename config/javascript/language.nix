@@ -20,7 +20,7 @@
         };
       };
     };
-    lsp.servers.ts-ls = {
+    lsp.servers.ts_ls = {
       enable = true;
       filetypes = [
         "javascript"
