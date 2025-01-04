@@ -99,7 +99,7 @@
               ./config
               ./config/php
             ];
-            php = with pkgs; [
+            extraPackages = with pkgs; [
               php82Packages.php-cs-fixer
             ];
           };
