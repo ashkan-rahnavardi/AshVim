@@ -88,7 +88,10 @@
       enable = true;
 
       folding = false;
-      settings.indent.enable = true;
+      settings = {
+        indent.enable = true;
+        highlight.enable = true;
+      };
     };
 
     vim-surround.enable = true;

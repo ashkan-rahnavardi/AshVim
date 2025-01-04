@@ -56,14 +56,52 @@
       };
     };
     lsp.servers = {
-      phpactor = {
+      intelephense = {
         enable = true;
         rootDir = ''
           function(fname)
             return vim.fn.getcwd()
           end
         '';
+        package = pkgs.nodePackages.intelephense;
+
+        # CUSTOM FOLDING NOT WORKING
+        #
+        # extraOptions = {
+        #   capabilities = {
+        #     textDocument = {
+        #       foldingRange = {
+        #         dynamicRegistration = false;
+        #         lineFoldingOnly = true;
+        #       };
+        #     };
+        #   };
+        # };
+        # settings = {
+        #   intelephense = {
+        #     environment = {
+        #       phpVersion = "8.1";
+        #     };
+        #     file = {
+        #       maxSize = 1000000;
+        #     };
+        #     folding = {
+        #       enable = true;
+        #     };
+        #   };
+        # };
       };
+
+      # PHPACTOR
+      #
+      # phpactor = {
+      #   enable = true;
+      #   rootDir = ''
+      #     function(fname)
+      #       return vim.fn.getcwd()
+      #     end
+      #   '';
+      # };
       eslint.enable = true;
     };
     none-ls.sources.formatting.prettier = {

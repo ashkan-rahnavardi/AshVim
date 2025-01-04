@@ -30,7 +30,10 @@
               ./config
               ./config/javascript
             ];
-            extraPackages = with pkgs; [sops];
+            extraPackages = with pkgs; [
+              sops
+              php82Packages.php-cs-fixer
+            ];
           };
           extraSpecialArgs = {};
         };
