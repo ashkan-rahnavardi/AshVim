@@ -524,5 +524,13 @@
       action = "<CMD>Telescope dap frames<CR>";
       options.desc = "Search Frames";
     }
+
+    # Open ToDo List
+    {
+      mode = "n";
+      key = "nn";
+      action = "<CMD>e ~/Documents/Notes/To Do.md<CR>";
+      options.desc = "Open ToDo List";
+    }
   ];
 }
