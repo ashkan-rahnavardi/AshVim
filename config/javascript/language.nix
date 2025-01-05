@@ -65,13 +65,23 @@
         '';
         package = pkgs.nodePackages.intelephense;
         extraOptions = {
-          capabilities.textDocument.formatting = true;
+          capabilities = {
+            textDocument = {
+              formatting = true; # Enable document formatting
+              onTypeFormatting = true; # Enable on-type formatting
+            };
+          };
         };
         onAttach.function = ''
           vim.api.nvim_create_autocmd('BufWritePre', {
             buffer = bufnr,
             callback = function()
-              vim.lsp.buf.format({ async = false })
+              vim.lsp.buf.format({
+                async = false,
+                filter = function(client)
+                  return client.name == "intelephense"
+                end,
+              })
             end,
           })
         '';
@@ -79,6 +89,8 @@
           intelephense = {
             format = {
               enable = true;
+              indentStyle = "space";
+              indentSize = 7;
             };
           };
         };
@@ -91,6 +103,21 @@
     };
   };
 }
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
 # intelephense = {
 #   enable = true;
 #   rootDir = ''

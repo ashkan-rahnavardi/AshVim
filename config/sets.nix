@@ -3,7 +3,7 @@
     auto-save.enable = true;
     bufferline = {
       # TODO: remove this once you are used to not having it
-      enable = false;
+      enable = true;
       settings = {
         options = {
           always_show_bufferline = false;
