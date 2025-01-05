@@ -27,6 +27,80 @@
       };
     };
   };
+
+  extraConfigLua = ''
+    function ToggleFoldLevel()
+      if vim.wo.foldlevel == 99 then
+        vim.wo.foldlevel = 1
+      else
+        vim.wo.foldlevel = 99
+      end
+    end
+    vim.g.ToggleFoldLevel = ToggleFoldLevel -- Make it globally accessible
+  '';
+
+  keymaps = [
+    {
+      mode = "n";
+      key = "zz";
+      action = "<CMD> lua vim.g.ToggleFoldLevel()<CR>";
+      options.desc = "Toggle FoldLevel 99/2";
+    }
+    {
+      mode = "n";
+      key = "z1";
+      action = "<CMD>set foldlevel=1<CR>";
+      options.desc = "Set FoldLevel 1";
+    }
+    {
+      mode = "n";
+      key = "z2";
+      action = "<CMD>set foldlevel=2<CR>";
+      options.desc = "Set FoldLevel 2";
+    }
+    {
+      mode = "n";
+      key = "z3";
+      action = "<CMD>set foldlevel=3<CR>";
+      options.desc = "Set FoldLevel 3";
+    }
+    {
+      mode = "n";
+      key = "z4";
+      action = "<CMD>set foldlevel=4<CR>";
+      options.desc = "Set FoldLevel 4";
+    }
+    {
+      mode = "n";
+      key = "z5";
+      action = "<CMD>set foldlevel=5<CR>";
+      options.desc = "Set FoldLevel 5";
+    }
+    {
+      mode = "n";
+      key = "z6";
+      action = "<CMD>set foldlevel=6<CR>";
+      options.desc = "Set FoldLevel 6";
+    }
+    {
+      mode = "n";
+      key = "z7";
+      action = "<CMD>set foldlevel=7<CR>";
+      options.desc = "Set FoldLevel 7";
+    }
+    {
+      mode = "n";
+      key = "z8";
+      action = "<CMD>set foldlevel=8<CR>";
+      options.desc = "Set FoldLevel 8";
+    }
+    {
+      mode = "n";
+      key = "z9";
+      action = "<CMD>set foldlevel=9<CR>";
+      options.desc = "Set FoldLevel 9";
+    }
+  ];
 }
 # FOLDING BASED OFF LSP
 #
