@@ -528,7 +528,7 @@
     # Open ToDo List
     {
       mode = "n";
-      key = "nn";
+      key = "<leader>nn";
       action = "<CMD>e ~/Documents/Notes/quicknote.md<CR>";
       options.desc = "Open quick note";
     }
