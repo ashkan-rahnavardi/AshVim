@@ -529,8 +529,8 @@
     {
       mode = "n";
       key = "nn";
-      action = "<CMD>e ~/Documents/Notes/To Do.md<CR>";
-      options.desc = "Open ToDo List";
+      action = "<CMD>e ~/Documents/Notes/quicknote.md<CR>";
+      options.desc = "Open quick note";
     }
   ];
 }
