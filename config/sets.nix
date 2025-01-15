@@ -1,9 +1,9 @@
 {
   plugins = {
-    auto-save.enable = true;
+    auto-save.enable = false;
     bufferline = {
       # TODO: remove this once you are used to not having it
-      enable = true;
+      enable = false;
       settings = {
         options = {
           always_show_bufferline = false;
