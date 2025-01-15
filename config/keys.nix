@@ -524,13 +524,5 @@
       action = "<CMD>Telescope dap frames<CR>";
       options.desc = "Search Frames";
     }
-
-    # Open ToDo List
-    {
-      mode = "n";
-      key = "<leader>nn";
-      action = "<CMD>e ~/Documents/Notes/quicknote.md<CR>";
-      options.desc = "Open quick note";
-    }
   ];
 }

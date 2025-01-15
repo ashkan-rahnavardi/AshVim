@@ -11,12 +11,21 @@
         workspaces = [
           {
             name = "root";
-            path = "~/Documents/Notes";
+            path = "/home/ash/Documents/Notes";
           }
         ];
       };
     };
   };
+
+  keymaps = [
+    {
+      mode = "n";
+      key = "<leader>nn";
+      action = "<cmd>ObsidianQuickSwitch<cr>";
+      options = {desc = "Obsidian Quick Switch";};
+    }
+  ];
 
   extraConfigLua = ''
   '';

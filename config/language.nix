@@ -179,7 +179,7 @@ in
             just = ["just"];
             lua = ["stylua"];
             # php = ["php"];
-            markdown = ["prettier"];
+            # markdown = ["prettier"];
             nix = ["alejandra"];
             ruby = ["rubyfmt"];
             terraform = ["tofu_fmt"];

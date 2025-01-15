@@ -81,7 +81,7 @@
         skip_confirmation_for_simple_edits = true;
       };
     };
-    render-markdown.enable = true;
+    render-markdown.enable = false;
     todo-comments.enable = true;
 
     treesitter = {
