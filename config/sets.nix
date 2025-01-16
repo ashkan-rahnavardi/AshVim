@@ -1,6 +1,11 @@
 {
   plugins = {
-    auto-save.enable = false;
+    auto-save = {
+      enable = true;
+      # settings = {
+      #   debounce_delay = 3000;
+      # };
+    };
     bufferline = {
       # TODO: remove this once you are used to not having it
       enable = false;
