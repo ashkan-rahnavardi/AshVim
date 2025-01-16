@@ -11,7 +11,7 @@
         workspaces = [
           {
             name = "root";
-            path = "/home/ash/Documents/Notes";
+            path = "~/Documents/Notes";
           }
         ];
       };
