@@ -30,10 +30,10 @@
 
   extraConfigLua = ''
     function ToggleFoldLevel()
-      if vim.wo.foldlevel == 99 then
+      if vim.wo.foldlevel == 5 then
         vim.wo.foldlevel = 1
       else
-        vim.wo.foldlevel = 99
+        vim.wo.foldlevel = 5
       end
     end
     vim.g.ToggleFoldLevel = ToggleFoldLevel -- Make it globally accessible
