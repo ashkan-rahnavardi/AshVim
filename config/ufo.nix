@@ -40,12 +40,12 @@
   '';
 
   keymaps = [
-    {
-      mode = "n";
-      key = "zz";
-      action = "<CMD> lua vim.g.ToggleFoldLevel()<CR>";
-      options.desc = "Toggle FoldLevel 99/2";
-    }
+    # {
+    #   mode = "n";
+    #   key = "zz";
+    #   action = "<CMD> lua vim.g.ToggleFoldLevel()<CR>";
+    #   options.desc = "Toggle FoldLevel 99/2";
+    # }
     {
       mode = "n";
       key = "z1";
