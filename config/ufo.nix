@@ -33,19 +33,19 @@
       if vim.wo.foldlevel == 5 then
         vim.wo.foldlevel = 1
       else
-        vim.wo.foldlevel = 5
+        vim.wo.foldlevel = 20
       end
     end
     vim.g.ToggleFoldLevel = ToggleFoldLevel -- Make it globally accessible
   '';
 
   keymaps = [
-    # {
-    #   mode = "n";
-    #   key = "zz";
-    #   action = "<CMD> lua vim.g.ToggleFoldLevel()<CR>";
-    #   options.desc = "Toggle FoldLevel 99/2";
-    # }
+    {
+      mode = "n";
+      key = "zz";
+      action = "<CMD> lua vim.g.ToggleFoldLevel()<CR>";
+      options.desc = "Toggle FoldLevel 20/2";
+    }
     {
       mode = "n";
       key = "z1";
