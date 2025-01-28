@@ -30,7 +30,7 @@
 
   extraConfigLua = ''
     function ToggleFoldLevel()
-      if vim.wo.foldlevel == 5 then
+      if vim.wo.foldlevel == 20 then
         vim.wo.foldlevel = 1
       else
         vim.wo.foldlevel = 20
