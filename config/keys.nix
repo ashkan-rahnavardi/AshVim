@@ -212,12 +212,12 @@
     }
 
     # Hop command
-    {
-      mode = "n";
-      key = "m";
-      action = "<CMD>HopChar1<CR>";
-      options.desc = "Hop Char 1";
-    }
+    # {
+    #   mode = "n";
+    #   key = "m";
+    #   action = "<CMD>HopChar1<CR>";
+    #   options.desc = "Hop Char 1";
+    # }
 
     # Add undo breakpoints
     {
