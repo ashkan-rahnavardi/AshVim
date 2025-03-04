@@ -100,7 +100,7 @@
       };
     };
 
-    vim-surround.enable = true;
+    # vim-surround.enable = true;
     web-devicons.enable = true;
   };
 }
