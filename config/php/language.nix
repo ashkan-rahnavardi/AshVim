@@ -17,13 +17,21 @@
         };
       };
     };
-    lsp.servers.phpactor = {
-      enable = true;
-      rootDir = ''
-        function(fname)
-          return vim.fn.getcwd()
-        end
-      '';
+    lsp.servers = {
+      phpactor = {
+        enable = true;
+        rootDir = ''
+          function(fname)
+            return vim.fn.getcwd()
+          end
+        '';
+      };
+      intelephense = {
+        enable = true;
+        settings = {
+          stubs = ["wordpress" "woocommerce" "wordpress-globals"];
+        };
+      };
     };
   };
 }

@@ -15,6 +15,8 @@
         # command = "echo 'hello world'";
         # command = "bash -c 'echo hello world; sleep 3'";
         command = "cmatrix";
+        # command = "chafa -f symbols --symbols braille -c 256 --view-size=72x27 /home/ash/Pictures/me/hackcan.png";
+        # command = "cat /home/ash/Pictures/me/hackcan-color.txt";
         width = 400;
         height = 40;
         opts = {
