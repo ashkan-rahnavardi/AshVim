@@ -29,6 +29,7 @@
             imports = [
               ./config
               ./config/javascript
+              ./config/php
             ];
             extraPackages = with pkgs; [
               sops

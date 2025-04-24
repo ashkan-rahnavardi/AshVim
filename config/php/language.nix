@@ -18,20 +18,63 @@
       };
     };
     lsp.servers = {
-      phpactor = {
+      # phpactor = {
+      #   enable = true;
+      #   rootDir = ''
+      #     function(fname)
+      #       return vim.fn.getcwd()
+      #     end
+      #   '';
+      # };
+      intelephense = {
         enable = true;
         rootDir = ''
           function(fname)
             return vim.fn.getcwd()
           end
         '';
-      };
-      intelephense = {
-        enable = true;
+        package = pkgs.nodePackages.intelephense;
+        extraOptions = {
+          capabilities = {
+            textDocument = {
+              formatting = true; # Enable document formatting
+              onTypeFormatting = true; # Enable on-type formatting
+            };
+          };
+        };
+        onAttach.function = ''
+          vim.api.nvim_create_autocmd('BufWritePre', {
+            buffer = bufnr,
+            callback = function()
+              vim.lsp.buf.format({
+                async = false,
+                filter = function(client)
+                  return client.name == "intelephense"
+                end,
+              })
+            end,
+          })
+        '';
         settings = {
-          stubs = ["wordpress" "woocommerce" "wordpress-globals"];
+          intelephense = {
+            format = {
+              enable = true;
+              indentStyle = "space";
+              indentSize = 7;
+            };
+            stubs = ["wordpress" "woocommerce" "wordpress-globals acf-pro polylang wp-cli genesis Core"];
+            environment.includePaths = "/home/ash/.config/composer/vendor/php-stubs/";
+          };
         };
       };
+      # intelephense = {
+      #   enable = true;
+      #   settings = {
+      #     stubs = ["wordpress" "woocommerce" "wordpress-globals"];
+      #     environment.includePaths = "/home/ash/.config/composer/vendor/php-stubs/";
+      #     foo_bar = 42;
+      #   };
+      # };
     };
   };
 }
