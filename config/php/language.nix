@@ -28,11 +28,11 @@
       # };
       intelephense = {
         enable = true;
-        rootDir = ''
-          function(fname)
-            return vim.fn.getcwd()
-          end
-        '';
+        # rootDir = ''
+        #   function(fname)
+        #     return vim.fn.getcwd()
+        #   end
+        # '';
         package = pkgs.nodePackages.intelephense;
         extraOptions = {
           capabilities = {
