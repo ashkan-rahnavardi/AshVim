@@ -56,6 +56,17 @@
           icon = "";
         }
 
+        {
+          __unkeyed-1 = "<leader>a";
+          group = "Avante";
+          icon = "󰬈";
+        }
+        {
+          __unkeyed-1 = "<leader>A";
+          group = "AugmentCode";
+          icon = "󰬈";
+        }
+
         # Keys with custom icons / labels
         {
           __unkeyed-1 = "<leader>e";
@@ -523,6 +534,50 @@
       key = "<leader>d/f";
       action = "<CMD>Telescope dap frames<CR>";
       options.desc = "Search Frames";
+    }
+
+    # AugmentCode
+    {
+      mode = "i";
+      key = "<c-y>";
+      action = "<CMD>call augment#Accept()<CR>";
+      options.desc = "Accept AugmentCode suggestion";
+    }
+    {
+      mode = "n";
+      key = "<leader>As";
+      action = "<CMD>Augment status<CR>";
+      options.desc = "AugmentCode Status";
+    }
+    {
+      mode = "n";
+      key = "<leader>Ae";
+      action = "<CMD>Augment enable<CR>";
+      options.desc = "AugmentCode Enable";
+    }
+    {
+      mode = "n";
+      key = "<leader>Ad";
+      action = "<CMD>Augment disable<CR>";
+      options.desc = "AugmentCode Disable";
+    }
+    {
+      mode = "n";
+      key = "<leader>Ac";
+      action = "<CMD>Augment chat<CR>";
+      options.desc = "Chat with AugmentCode";
+    }
+    {
+      mode = "n";
+      key = "<leader>An";
+      action = "<CMD>Augment chat-new<CR>";
+      options.desc = "Start a new chat";
+    }
+    {
+      mode = "n";
+      key = "<leader>At";
+      action = "<CMD>Augment chat-toggle<CR>";
+      options.desc = "Toggle chat window";
     }
   ];
 }

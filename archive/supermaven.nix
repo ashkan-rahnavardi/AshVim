@@ -1,5 +1,6 @@
 {lib, ...}: {
   plugins = {
+    
     supermaven = {
       enable = true;
       autoLoad = true;
