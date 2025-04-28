@@ -2,6 +2,7 @@
   plugins = {
     supermaven = {
       enable = true;
+      autoLoad = true;
       settings = {
         keymaps = {
           accept_suggestion = "<Tab>";
