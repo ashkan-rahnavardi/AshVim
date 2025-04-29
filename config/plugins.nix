@@ -18,6 +18,8 @@
       hash = "sha256-VzHFmt8uOsZEYqIGAbwSrmGLlOfTnL7QvsRB5yMpSG0=";
     };
     nvimSkipModule = "outline.providers.norg";
+
+    propagatedBuildInputs = [pkgs.nodejs_22];
   };
 in {
   extraPlugins = with pkgs; [
@@ -30,12 +32,14 @@ in {
   ];
 
   extraConfigLua = ''
+    vim.g.augment_node_comman = "node"
+
     require("telescope").load_extension('harpoon')
 
-    require("notify").setup({
-      background_colour = "#000000",
-    })
+        require("notify").setup({
+          background_colour = "#000000",
+        })
 
-    require("outline").setup {}
+        require("outline").setup {}
   '';
 }

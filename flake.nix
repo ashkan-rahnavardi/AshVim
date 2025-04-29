@@ -34,6 +34,7 @@
             extraPackages = with pkgs; [
               sops
               php82Packages.php-cs-fixer
+              nodejs_22
             ];
           };
           extraSpecialArgs = {};
@@ -48,6 +49,7 @@
             extraPackages = with pkgs; [
               sops
               rust-bin.stable.latest.default
+              nodejs_22
             ];
           };
           extraSpecialArgs = {};
@@ -59,7 +61,10 @@
               ./config
               ./config/csharp
             ];
-            extraPackages = with pkgs; [sops];
+            extraPackages = with pkgs; [
+              sops
+              nodejs_22
+            ];
           };
           extraSpecialArgs = {};
         };
@@ -70,7 +75,10 @@
               ./config
               ./config/golang
             ];
-            extraPackages = with pkgs; [sops];
+            extraPackages = with pkgs; [
+              sops
+              nodejs_22
+            ];
           };
           extraSpecialArgs = {};
         };
@@ -81,7 +89,10 @@
               ./config
               ./config/python
             ];
-            extraPackages = with pkgs; [sops];
+            extraPackages = with pkgs; [
+              sops
+              nodejs_22
+            ];
           };
           extraSpecialArgs = {};
         };
@@ -92,7 +103,10 @@
               ./config
               ./config/javascript
             ];
-            extraPackages = with pkgs; [sops];
+            extraPackages = with pkgs; [
+              sops
+              nodejs_22
+            ];
           };
           extraSpecialArgs = {};
         };
@@ -105,6 +119,7 @@
             ];
             extraPackages = with pkgs; [
               php82Packages.php-cs-fixer
+              nodejs_22
             ];
           };
           extraSpecialArgs = {};
