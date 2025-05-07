@@ -34,7 +34,8 @@
             extraPackages = with pkgs; [
               sops
               php82Packages.php-cs-fixer
-              nodejs_22
+              nodejs_22 # node runtime needed for Augment Code to work
+              eslint
             ];
           };
           extraSpecialArgs = {};

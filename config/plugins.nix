@@ -36,10 +36,7 @@ in {
 
     require("telescope").load_extension('harpoon')
 
-        require("notify").setup({
-          background_colour = "#000000",
-        })
 
-        require("outline").setup {}
+    require("outline").setup {}
   '';
 }

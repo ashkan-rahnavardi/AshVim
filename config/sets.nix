@@ -74,7 +74,16 @@
     };
 
     noice.enable = true;
-    notify.enable = true;
+
+    notify = {
+      enable = true;
+      luaConfig.pre = ''
+        require("notify").setup({
+          background_colour = "#000000",
+        })
+      '';
+    };
+
     nvim-autopairs.enable = true;
     colorizer.enable = true;
     oil = {

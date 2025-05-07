@@ -28,6 +28,7 @@
       swapfile = false;
       undofile = true; # Build-in persistent undo
       undolevels = 10000;
+      wrap = false;
     };
   };
 }
