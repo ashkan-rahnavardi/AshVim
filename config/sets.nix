@@ -85,6 +85,7 @@
     };
 
     nvim-autopairs.enable = true;
+    ts-autotag.enable = true;
     colorizer.enable = true;
     oil = {
       enable = true;
