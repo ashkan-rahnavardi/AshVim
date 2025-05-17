@@ -34,8 +34,6 @@ in {
   extraConfigLua = ''
     vim.g.augment_node_comman = "node"
 
-    require("telescope").load_extension('harpoon')
-
 
     require("outline").setup {}
   '';

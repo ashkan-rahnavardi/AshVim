@@ -39,10 +39,6 @@
       };
     };
 
-    harpoon = {
-      enable = true;
-      enableTelescope = true;
-    };
     # harpoon = {
     #   enable = true;
     #   saveOnToggle = true;
@@ -86,6 +82,7 @@
 
     nvim-autopairs.enable = true;
     ts-autotag.enable = true;
+    tailwind-tools.enable = true;
     colorizer.enable = true;
     oil = {
       enable = true;

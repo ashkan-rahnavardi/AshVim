@@ -19,6 +19,7 @@
         "x86_64-darwin"
         "aarch64-darwin"
       ];
+
       perSystem = {system, ...}: let
         overlays = [(import rust-overlay)];
         nixvimLib = nixvim.lib.${system};
