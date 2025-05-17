@@ -1,10 +1,15 @@
 {
   plugins = {
     auto-save = {
-      enable = true;
-      # settings = {
-      #   debounce_delay = 3000;
-      # };
+      # enable = true;
+      enable = false;
+      settings = {
+        debounce_delay = 3000;
+        # only save if the buffer isn’t the Harpoon UI
+        condition = ''
+          return vim.bo.filetype ~= "harpoon"
+        '';
+      };
     };
     bufferline = {
       # TODO: remove this once you are used to not having it
