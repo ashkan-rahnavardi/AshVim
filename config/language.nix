@@ -147,6 +147,7 @@ in
           just.enable = true;
           opentofu_fmt.enable = true;
           prettier.enable = true;
+          prettierd.enable = true;
           # rubyfmt is broken on darwin-based systems
           rubyfmt.enable = (
             pkgs.stdenv.hostPlatform.system
