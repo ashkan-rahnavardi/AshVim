@@ -179,6 +179,7 @@ in
             json = ["prettier"];
             just = ["just"];
             lua = ["stylua"];
+            bash = ["shfmt"];
             # php = ["php"];
             # markdown = ["prettier"];
             nix = ["alejandra"];
