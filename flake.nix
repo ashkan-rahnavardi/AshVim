@@ -51,6 +51,7 @@
             ];
             extraPackages = with pkgs; [
               sops
+              shfmt
               rust-bin.stable.latest.default
               nodejs_22
             ];
@@ -66,6 +67,7 @@
             ];
             extraPackages = with pkgs; [
               sops
+              shfmt
               nodejs_22
             ];
           };
@@ -80,6 +82,7 @@
             ];
             extraPackages = with pkgs; [
               sops
+              shfmt
               nodejs_22
             ];
           };
@@ -94,6 +97,7 @@
             ];
             extraPackages = with pkgs; [
               sops
+              shfmt
               nodejs_22
             ];
           };
@@ -108,6 +112,7 @@
             ];
             extraPackages = with pkgs; [
               sops
+              shfmt
               nodejs_22
             ];
           };
@@ -121,6 +126,7 @@
               ./config/php
             ];
             extraPackages = with pkgs; [
+              shfmt
               php82Packages.php-cs-fixer
               nodejs_22
             ];
