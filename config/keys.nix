@@ -66,6 +66,11 @@
           group = "AugmentCode";
           icon = "󰬈";
         }
+        {
+          __unkeyed-1 = "<leader>w";
+          group = "Workspace";
+          icon = "💼";
+        }
 
         # Keys with custom icons / labels
         {
@@ -174,7 +179,7 @@
           desc = "Remove Workspace Folder";
         }
         {
-          __unkeyed-1 = "<leader>wr";
+          __unkeyed-1 = "<leader>wl";
           icon = "󰉓";
           desc = "List Workspace Folders";
         }
@@ -386,12 +391,12 @@
       action = "<CMD>wincmd l<CR>";
       options.desc = "Navigate Window Right";
     }
-    {
-      mode = "n";
-      key = "<leader>w";
-      action = "<c-w>";
-      options.desc = "Windows";
-    }
+    # {
+    #   mode = "n";
+    #   key = "<leader>w";
+    #   action = "<c-w>";
+    #   options.desc = "Windows";
+    # }
     {
       mode = "n";
       key = "<leader>-";
@@ -404,12 +409,12 @@
       action = "<C-W>v";
       options.desc = "Split Window Right";
     }
-    {
-      mode = "n";
-      key = "<leader>wd";
-      action = "<C-W>c";
-      options.desc = "Delete Window";
-    }
+    # {
+    #   mode = "n";
+    #   key = "<leader>wd";
+    #   action = "<C-W>c";
+    #   options.desc = "Delete Window";
+    # }
 
     # Tabs
     {
@@ -540,7 +545,7 @@
     # AugmentCode
     {
       mode = "i";
-      key = "<c-y>";
+      key = "<C-p>";
       action = "<CMD>call augment#Accept()<CR>";
       options.desc = "Accept AugmentCode suggestion";
     }
