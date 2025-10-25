@@ -2,18 +2,12 @@
   plugins = {
     auto-save = {
       enable = true;
-      # enable = false;
-      settings = {
-        debounce_delay = 3000;
-        # only save if the buffer isn’t the Harpoon UI
-        # condition = ''
-        #   return vim.bo.filetype ~= "harpoon"
-        # '';
-      };
+      # settings = {
+      #   debounce_delay = 3000;
+      # };
     };
     bufferline = {
-      # TODO: remove this once you are used to not having it
-      enable = false;
+      enable = true;
       settings = {
         options = {
           always_show_bufferline = false;
@@ -43,14 +37,6 @@
         watch_gitdir = {follow_files = true;};
       };
     };
-
-    # harpoon = {
-    #   enable = true;
-    #   saveOnToggle = true;
-    #   saveOnChange = true;
-    #   enterOnSendcmd = false;
-    #   markBranch = true;
-    # };
 
     # hop.enable = true;
     illuminate.enable = true;
@@ -87,7 +73,7 @@
 
     nvim-autopairs.enable = true;
     ts-autotag.enable = true;
-    tailwind-tools.enable = true;
+    # tailwind-tools.enable = true;
     colorizer.enable = true;
     oil = {
       enable = true;

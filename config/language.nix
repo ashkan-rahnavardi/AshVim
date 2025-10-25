@@ -18,7 +18,7 @@ in
             }
             {
               name = "buffer";
-              keywordLength = 3;
+              keywordLength = 1;
             }
             # {name = "supermaven";}
           ];
@@ -91,7 +91,7 @@ in
                   local col = vim.fn.col('.') - 1
 
                   if cmp.visible() then
-                    cmp.select_next_item(select_opts)
+                    cmp.select_next_item(${selectOpts})
                   elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
                     fallback()
                   else
@@ -106,7 +106,7 @@ in
               cmp.mapping(
                 function(fallback)
                   if cmp.visible() then
-                    cmp.select_prev_item(select_opts)
+                    cmp.select_prev_item(${selectOpts})
                   else
                     fallback()
                   end
@@ -132,12 +132,32 @@ in
               maxHeight = 20;
             };
           };
+          completion = {
+            autocomplete = [
+              "InsertEnter"
+              "TextChanged"
+            ];
+          };
+        };
+        cmdline = {
+          "/" = {
+            mapping.__raw = "cmp.mapping.preset.cmdline()";
+            sources = [{name = "buffer";}];
+          };
+          ":" = {
+            mapping.__raw = "cmp.mapping.preset.cmdline()";
+            sources = [
+              {name = "path";}
+              {name = "cmdline";}
+            ];
+          };
         };
       };
       cmp-nvim-lsp.enable = true;
       cmp-buffer.enable = true;
       cmp-path.enable = true;
       cmp-treesitter.enable = true;
+      cmp-cmdline.enable = true;
       dap.enable = true;
       none-ls = {
         enable = true;
