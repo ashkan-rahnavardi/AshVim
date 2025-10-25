@@ -30,7 +30,7 @@
             imports = [
               ./config
               ./config/javascript
-              ./config/php
+              # ./config/php
             ];
             extraPackages = with pkgs; [
               sops
@@ -123,7 +123,7 @@
           module = {pkgs, ...}: {
             imports = [
               ./config
-              ./config/php
+              # ./config/php
             ];
             extraPackages = with pkgs; [
               shfmt
