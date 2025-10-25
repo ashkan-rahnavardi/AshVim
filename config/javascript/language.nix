@@ -6,30 +6,13 @@
   plugins = {
     conform-nvim = {
       settings = {
-        formatters_by_ft.javascript = {
-          __unkeyed-1 = "prettierd";
-          __unkeyed-2 = "prettier";
-          timeout_ms = 10000;
-          stop_after_first = true;
+        formatters_by_ft = {
+          javascript = ["prettierd"];
+          javascriptreact = ["prettierd"];
+          typescript = ["prettierd"];
+          typescriptreact = ["prettierd"];
         };
-        formatters_by_ft.typescript = {
-          __unkeyed-1 = "prettierd";
-          __unkeyed-2 = "prettier";
-          timeout_ms = 10000;
-          stop_after_first = true;
-        };
-        formatters_by_ft.javascriptreact = {
-          __unkeyed-1 = "prettierd";
-          __unkeyed-2 = "prettier";
-          timeout_ms = 10000;
-          stop_after_first = true;
-        };
-        formatters_by_ft.typescriptreact = {
-          __unkeyed-1 = "prettierd";
-          __unkeyed-2 = "prettier";
-          timeout_ms = 10000;
-          stop_after_first = true;
-        };
+        # formatters.prettierd.timeout_ms = 10000;
       };
     };
     lsp.servers.ts_ls = {
@@ -72,13 +55,9 @@
       tailwindcss.enable = true;
     };
     none-ls.sources.formatting = {
-      prettier = {
-        enable = true;
-        disableTsServerFormatter = false;
-      };
       prettierd = {
         enable = true;
-        disableTsServerFormatter = false;
+        disableTsServerFormatter = true;
       };
     };
   };

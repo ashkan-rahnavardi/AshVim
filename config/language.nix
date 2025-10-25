@@ -146,7 +146,7 @@ in
           hclfmt.enable = true;
           just.enable = true;
           opentofu_fmt.enable = true;
-          prettier.enable = true;
+          # prettier.enable = true;
           prettierd.enable = true;
           # rubyfmt is broken on darwin-based systems
           rubyfmt.enable = (
@@ -174,14 +174,14 @@ in
           notify_on_error = true;
 
           formatters_by_ft = {
-            css = ["prettier"];
-            html = ["prettier"];
-            json = ["prettier"];
+            css = ["prettierd"];
+            html = ["prettierd"];
+            json = ["prettierd"];
             just = ["just"];
             lua = ["stylua"];
             sh = ["shfmt"];
             # php = ["php"];
-            # markdown = ["prettier"];
+            # markdown = ["prettierd"];
             nix = ["alejandra"];
             ruby = ["rubyfmt"];
             terraform = ["tofu_fmt"];
@@ -210,7 +210,6 @@ in
             "gy" = "type_definition";
             "<leader>ca" = "code_action";
             "<leader>cr" = "rename";
-            "<leader>wl" = "list_workspace_folders";
             "<leader>wr" = "remove_workspace_folder";
             "<leader>wa" = "add_workspace_folder";
           };
@@ -241,13 +240,40 @@ in
             local hl = "DiagnosticSign" .. type
             vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
           end
+
+
+
+          local function list_workspace_folders_notify()
+            local folders = vim.lsp.buf.list_workspace_folders()
+            if not folders or vim.tbl_isempty(folders) then
+              vim.notify("No workspace folders", vim.log.levels.INFO, { title = "Workspace Folders" })
+              return
+            end
+
+            local seen, uniq = {}, {}
+            for _, folder in ipairs(folders) do
+              -- normalize the trailing slash so "/foo" and "/foo/" collapse
+              local normalized = folder:gsub("/+$", "")
+              if normalized == "" then normalized = "/" end
+              if not seen[normalized] then
+                seen[normalized] = true
+                table.insert(uniq, normalized)
+              end
+            end
+
+            vim.notify(table.concat(uniq, "\n"), vim.log.levels.INFO, { title = "Workspace Folders" })
+          end
+
+          vim.keymap.set("n", "<leader>wl", list_workspace_folders_notify, { desc = "List Workspace Folders" })
         '';
+
         servers = {
           jsonls.enable = true;
           marksman.enable = true;
-          nil_ls.enable = true;
-          nixd.enable = true;
+          # nil_ls.enable = true; # Nix Server
+          nixd.enable = true; # Nix Server
           yamlls.enable = true;
+          tailwindcss.enable = true;
           taplo.enable = true;
         };
       };
