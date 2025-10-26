@@ -32,6 +32,94 @@
     };
   };
 
+  plugins.which-key.settings.spec = [
+    {
+      __unkeyed-1 = "<leader>d";
+      group = "Debug";
+      icon = "";
+    }
+    {
+      __unkeyed-1 = "<leader>d/";
+      group = "Search";
+      icon = "";
+    }
+    {
+      __unkeyed-1 = "<leader>da";
+      icon = "";
+      desc = "Run with Args";
+    }
+    {
+      __unkeyed-1 = "<leader>db";
+      icon = "";
+      desc = "Toggle Breakpoint";
+    }
+    {
+      __unkeyed-1 = "<leader>dB";
+      icon = "";
+      desc = "Breakpoint Condition";
+    }
+    {
+      __unkeyed-1 = "<leader>dc";
+      icon = "";
+      desc = "Continue";
+    }
+    {
+      __unkeyed-1 = "<leader>dC";
+      icon = "";
+      desc = "Run to cursor";
+    }
+    {
+      __unkeyed-1 = "<leader>de";
+      icon = "󰫧";
+      desc = "Eval";
+    }
+    {
+      __unkeyed-1 = "<leader>dg";
+      icon = "";
+      desc = "Go to line (no execute)";
+    }
+    {
+      __unkeyed-1 = "<leader>di";
+      icon = "󰆹";
+      desc = "Step into";
+    }
+    {
+      __unkeyed-1 = "<leader>dj";
+      icon = "";
+      desc = "Down";
+    }
+    {
+      __unkeyed-1 = "<leader>dk";
+      icon = "";
+      desc = "Up";
+    }
+    {
+      __unkeyed-1 = "<leader>dl";
+      icon = "";
+      desc = "Run Last";
+    }
+    {
+      __unkeyed-1 = "<leader>do";
+      icon = "";
+      desc = "Step Out";
+    }
+    {
+      __unkeyed-1 = "<leader>dO";
+      icon = "";
+      desc = "Step Over";
+    }
+    {
+      __unkeyed-1 = "<leader>dp";
+      icon = "";
+      desc = "Pause";
+    }
+    {
+      __unkeyed-1 = "<leader>dt";
+      icon = "";
+      desc = "Terminate";
+    }
+  ];
+
   keymaps = [
     {
       mode = "n";
@@ -209,6 +297,30 @@
       key = "<leader>df";
       action = "<CMD>lua require('dap.ext.vscode').load_launchjs()<CR><CMD>Telescope dap configurations<CR>";
       options = {desc = "Debug Configurations";};
+    }
+    {
+      mode = "n";
+      key = "<leader>d/c";
+      action = "<CMD>Telescope dap commands<CR>";
+      options.desc = "Search Commands";
+    }
+    {
+      mode = "n";
+      key = "<leader>d/b";
+      action = "<CMD>Telescope dap list_breakpoints<CR>";
+      options.desc = "Search Breakpoints";
+    }
+    {
+      mode = "n";
+      key = "<leader>d/v";
+      action = "<CMD>Telescope dap variables<CR>";
+      options.desc = "Search Variables";
+    }
+    {
+      mode = "n";
+      key = "<leader>d/f";
+      action = "<CMD>Telescope dap frames<CR>";
+      options.desc = "Search Frames";
     }
   ];
 

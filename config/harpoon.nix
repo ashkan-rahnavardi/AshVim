@@ -6,6 +6,14 @@
     };
   };
 
+  plugins.which-key.settings.spec = [
+    {
+      __unkeyed-1 = "<leader>h";
+      icon = "󱡅";
+      desc = "Harpoon";
+    }
+  ];
+
   # extraConfigLua = ''
   #
   #   local harpoon = require('harpoon')

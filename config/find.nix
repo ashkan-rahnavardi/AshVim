@@ -46,14 +46,60 @@
       };
     };
     telescope.enable = true;
-    todo-comments = {
-      enable = true;
-      keymaps = {
-        todoTelescope = {
-          key = "<leader>st";
-          keywords = ["TODO"];
-        };
-      };
-    };
   };
+
+  keymaps = [
+    {
+      mode = "n";
+      key = "<leader>ff";
+      action = "<CMD>lua require('fzf-lua').files({ cwd = vim.loop.cwd() })<CR>";
+      options.desc = "Find Files";
+    }
+    {
+      mode = "n";
+      key = "<leader>fr";
+      action = "<CMD>lua require('fzf-lua').oldfiles({ cwd = vim.loop.cwd() })<CR>";
+      options.desc = "Recent Files";
+    }
+    {
+      mode = "n";
+      key = "gd";
+      action = "<CMD>FzfLua lsp_definitions jump_to_single_result=true ignore_current_line=true<CR>";
+      options.desc = "Goto Definition";
+    }
+    {
+      mode = "n";
+      key = "gr";
+      action = "<CMD>FzfLua lsp_references jump_to_single_result=true ignore_current_line=true<CR>";
+      options.desc = "References";
+    }
+    {
+      mode = "n";
+      key = "gI";
+      action = "<CMD>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<CR>";
+      options.desc = "Goto Implementation";
+    }
+    {
+      mode = "n";
+      key = "gy";
+      action = "<CMD>FzfLua lsp_typedefs jump_to_single_result=true ignore_current_line=true<CR>";
+      options.desc = "Goto T[y]pe Definition";
+    }
+  ];
+
+  plugins.which-key.settings.spec = [
+    {
+      __unkeyed-1 = "<leader>f";
+      group = "File / Find";
+    }
+    {
+      __unkeyed-1 = "<leader>s";
+      group = "Search";
+    }
+    {
+      __unkeyed-1 = "<leader>/";
+      icon = "";
+      desc = "Live Grep";
+    }
+  ];
 }
