@@ -20,7 +20,7 @@ in
               name = "buffer";
               keywordLength = 1;
             }
-            # {name = "supermaven";}
+            {name = "supermaven";}
           ];
 
           snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
@@ -216,7 +216,7 @@ in
         inlayHints = true;
         keymaps = {
           diagnostic = {
-            "<leader>E" = "open_float";
+            "<leader>E" = "open_float"; # TODO: fix this
             "[" = "goto_prev";
             "]" = "goto_next";
             "<leader>do" = "setloclist";
