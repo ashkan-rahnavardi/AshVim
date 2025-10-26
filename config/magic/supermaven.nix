@@ -2,37 +2,7 @@
   lib,
   config,
   ...
-}: let
-  supermavenSource = {
-    name = "supermaven";
-  };
-
-  supermavenTabMapping = ''
-    cmp.mapping(
-      function(fallback)
-        local luasnip = require("luasnip")
-        local has_supermaven, supermaven = pcall(require, "supermaven-nvim.completion_preview")
-        if has_supermaven and supermaven.has_suggestion and supermaven.has_suggestion() then
-          supermaven.on_accept_suggestion()
-          return
-        end
-
-        local col = vim.fn.col('.') - 1
-
-        if cmp.visible() then
-          cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-        elseif luasnip.expand_or_jumpable and luasnip.expand_or_jumpable() then
-          luasnip.expand_or_jump()
-        elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-          fallback()
-        else
-          cmp.complete()
-        end
-      end,
-      { "i", "s" }
-    )
-  '';
-in {
+}: {
   plugins.supermaven = {
     enable = true;
     autoLoad = true;
@@ -60,9 +30,4 @@ in {
       '';
     };
   };
-
-  # plugins.cmp.settings = {
-  #   sources = lib.mkAfter [supermavenSource];
-  #   mapping."<Tab>" = lib.mkForce supermavenTabMapping;
-  # };
 }

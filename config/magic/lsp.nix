@@ -73,6 +73,8 @@ lib.mkMerge [
 
         vim.keymap.set("n", "<leader>wl", list_workspace_folders_notify, { desc = "List Workspace Folders" })
       '';
+
+      # TODO: lighten up default lsp
       servers = {
         jsonls.enable = true;
         marksman.enable = true;
