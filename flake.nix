@@ -36,7 +36,6 @@
               sops
               # php82Packages.php-cs-fixer
               shfmt
-              nodejs_22 # node runtime needed for Augment Code to work
               eslint
             ];
           };
@@ -53,7 +52,6 @@
               sops
               shfmt
               rust-bin.stable.latest.default
-              nodejs_22
             ];
           };
           extraSpecialArgs = {};
@@ -68,7 +66,6 @@
             extraPackages = with pkgs; [
               sops
               shfmt
-              nodejs_22
             ];
           };
           extraSpecialArgs = {};
@@ -83,7 +80,6 @@
             extraPackages = with pkgs; [
               sops
               shfmt
-              nodejs_22
             ];
           };
           extraSpecialArgs = {};
@@ -98,7 +94,6 @@
             extraPackages = with pkgs; [
               sops
               shfmt
-              nodejs_22
             ];
           };
           extraSpecialArgs = {};
@@ -113,7 +108,6 @@
             extraPackages = with pkgs; [
               sops
               shfmt
-              nodejs_22
             ];
           };
           extraSpecialArgs = {};
@@ -128,7 +122,6 @@
             extraPackages = with pkgs; [
               shfmt
               # php82Packages.php-cs-fixer
-              nodejs_22
             ];
           };
           extraSpecialArgs = {};
