@@ -29,7 +29,7 @@
           module = {pkgs, ...}: {
             imports = [
               ./config
-              ./config/javascript
+              ./config/languages/javascript
               # ./config/php
             ];
             extraPackages = with pkgs; [
@@ -46,7 +46,7 @@
           module = {pkgs, ...}: {
             imports = [
               ./config
-              ./config/rust
+              ./config/languages/rust
             ];
             extraPackages = with pkgs; [
               sops
@@ -61,7 +61,7 @@
           module = {pkgs, ...}: {
             imports = [
               ./config
-              ./config/csharp
+              ./config/languages/csharp
             ];
             extraPackages = with pkgs; [
               sops
@@ -75,7 +75,7 @@
           module = {pkgs, ...}: {
             imports = [
               ./config
-              ./config/golang
+              ./config/languages/golang
             ];
             extraPackages = with pkgs; [
               sops
@@ -89,7 +89,7 @@
           module = {pkgs, ...}: {
             imports = [
               ./config
-              ./config/python
+              ./config/languages/python
             ];
             extraPackages = with pkgs; [
               sops
@@ -103,7 +103,7 @@
           module = {pkgs, ...}: {
             imports = [
               ./config
-              ./config/javascript
+              ./config/languages/javascript
             ];
             extraPackages = with pkgs; [
               sops

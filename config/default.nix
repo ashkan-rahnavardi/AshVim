@@ -4,13 +4,13 @@
     ./keys.nix # Keybinds
 
     # Magic ~ Autocompletion & lsp stuff
-    ./magic/augment-code.nix # AugmentCode AI coding assistant
+    # ./magic/augment-code.nix # AugmentCode AI coding assistant
     ./magic/supermaven.nix # Supermaven inline AI completions
     ./magic/cmp.nix #
     ./magic/debugging.nix #
     ./magic/lsp.nix #
     ./magic/formatting.nix #
-    ./magic/treesitter.nix #
+    ./magic/treesitter.nix # Treesitter syntax highlighting and indent
 
     # Editor Tools
     ./editor/auto-save.nix # Auto-save buffers proactively
@@ -32,7 +32,6 @@
     ./nav/outline.nix # Symbols outline sidebar
     ./nav/tmux-navigator.nix # Shared tmux and Neovim pane navigation
     ./nav/todo-comments.nix # Highlight and list TODO-style comments
-    ./nav/treesitter.nix # Treesitter syntax highlighting and indent
     ./nav/ufo.nix # UFO folding controls and keymaps
 
     # UI enhancements
