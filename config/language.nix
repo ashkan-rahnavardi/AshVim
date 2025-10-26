@@ -88,6 +88,12 @@ in
             "<Tab>" = ''
               cmp.mapping(
                 function(fallback)
+                  local has_supermaven, supermaven = pcall(require, "supermaven-nvim.completion_preview")
+                  if has_supermaven and supermaven.has_suggestion and supermaven.has_suggestion() then
+                    supermaven.on_accept_suggestion()
+                    return
+                  end
+
                   local col = vim.fn.col('.') - 1
 
                   if cmp.visible() then

@@ -542,48 +542,48 @@
       options.desc = "Search Frames";
     }
 
-    # AugmentCode
-    {
-      mode = "i";
-      key = "<C-p>";
-      action = "<CMD>call augment#Accept()<CR>";
-      options.desc = "Accept AugmentCode suggestion";
-    }
-    {
-      mode = "n";
-      key = "<leader>As";
-      action = "<CMD>Augment status<CR>";
-      options.desc = "AugmentCode Status";
-    }
-    {
-      mode = "n";
-      key = "<leader>Ae";
-      action = "<CMD>Augment enable<CR>";
-      options.desc = "AugmentCode Enable";
-    }
-    {
-      mode = "n";
-      key = "<leader>Ad";
-      action = "<CMD>Augment disable<CR>";
-      options.desc = "AugmentCode Disable";
-    }
-    {
-      mode = "n";
-      key = "<leader>Ac";
-      action = "<CMD>Augment chat<CR>";
-      options.desc = "Chat with AugmentCode";
-    }
-    {
-      mode = "n";
-      key = "<leader>An";
-      action = "<CMD>Augment chat-new<CR>";
-      options.desc = "Start a new chat";
-    }
-    {
-      mode = "n";
-      key = "<leader>At";
-      action = "<CMD>Augment chat-toggle<CR>";
-      options.desc = "Toggle chat window";
-    }
+    # # AugmentCode
+    # {
+    #   mode = "i";
+    #   key = "<C-p>";
+    #   action = "<CMD>call augment#Accept()<CR>";
+    #   options.desc = "Accept AugmentCode suggestion";
+    # }
+    # {
+    #   mode = "n";
+    #   key = "<leader>As";
+    #   action = "<CMD>Augment status<CR>";
+    #   options.desc = "AugmentCode Status";
+    # }
+    # {
+    #   mode = "n";
+    #   key = "<leader>Ae";
+    #   action = "<CMD>Augment enable<CR>";
+    #   options.desc = "AugmentCode Enable";
+    # }
+    # {
+    #   mode = "n";
+    #   key = "<leader>Ad";
+    #   action = "<CMD>Augment disable<CR>";
+    #   options.desc = "AugmentCode Disable";
+    # }
+    # {
+    #   mode = "n";
+    #   key = "<leader>Ac";
+    #   action = "<CMD>Augment chat<CR>";
+    #   options.desc = "Chat with AugmentCode";
+    # }
+    # {
+    #   mode = "n";
+    #   key = "<leader>An";
+    #   action = "<CMD>Augment chat-new<CR>";
+    #   options.desc = "Start a new chat";
+    # }
+    # {
+    #   mode = "n";
+    #   key = "<leader>At";
+    #   action = "<CMD>Augment chat-toggle<CR>";
+    #   options.desc = "Toggle chat window";
+    # }
   ];
 }
