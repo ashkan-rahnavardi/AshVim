@@ -1,5 +1,4 @@
-{lib, ...}:
-let
+{lib, ...}: let
   selectOpts = "{behavior = cmp.SelectBehavior.Select}";
 in {
   plugins = {
@@ -18,7 +17,6 @@ in {
             name = "buffer";
             keywordLength = 1;
           }
-          {name = "supermaven";}
         ];
         snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
         formatting = {
@@ -74,16 +72,12 @@ in {
           "<Tab>" = ''
             cmp.mapping(
               function(fallback)
-                local has_supermaven, supermaven = pcall(require, "supermaven-nvim.completion_preview")
-                if has_supermaven and supermaven.has_suggestion and supermaven.has_suggestion() then
-                  supermaven.on_accept_suggestion()
-                  return
-                end
-
                 local col = vim.fn.col('.') - 1
 
                 if cmp.visible() then
                   cmp.select_next_item(${selectOpts})
+                elseif luasnip.expand_or_jumpable and luasnip.expand_or_jumpable() then
+                  luasnip.expand_or_jump()
                 elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
                   fallback()
                 else
@@ -98,6 +92,8 @@ in {
               function(fallback)
                 if cmp.visible() then
                   cmp.select_prev_item(${selectOpts})
+                elseif luasnip.jumpable(-1) then
+                  luasnip.jump(-1)
                 else
                   fallback()
                 end
