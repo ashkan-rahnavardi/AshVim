@@ -1,6 +1,5 @@
 {lib, ...}: {
   plugins = {
-    
     supermaven = {
       enable = true;
       autoLoad = true;
@@ -18,9 +17,11 @@
         log_level = "info";
         disable_inline_completion = false;
         disable_keymaps = false;
+
+        # Function to determine when supermaven should activate.
         condition = lib.nixvim.mkRaw ''
           function()
-            return false
+            return true
           end
         '';
       };
