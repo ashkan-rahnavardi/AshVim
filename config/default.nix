@@ -5,8 +5,8 @@
 
     # Magic ~ Autocompletion & lsp stuff
     # ./magic/augment-code.nix # AugmentCode AI coding assistant
-    ./magic/supermaven.nix # Supermaven inline AI completions
     ./magic/cmp.nix #
+    ./magic/supermaven.nix # Supermaven inline AI completions
     ./magic/debugging.nix #
     ./magic/lsp.nix #
     ./magic/formatting.nix #

@@ -48,6 +48,7 @@ in {
           "<C-f>" = ''
             cmp.mapping(
               function(fallback)
+                local luasnip = require("luasnip")
                 if luasnip.jumpable(1) then
                   luasnip.jump(1)
                 else
@@ -60,6 +61,7 @@ in {
           "<C-b>" = ''
             cmp.mapping(
               function(fallback)
+                local luasnip = require("luasnip")
                 if luasnip.jumpable(-1) then
                   luasnip.jump(-1)
                 else
@@ -72,6 +74,7 @@ in {
           "<Tab>" = ''
             cmp.mapping(
               function(fallback)
+                local luasnip = require("luasnip")
                 local col = vim.fn.col('.') - 1
 
                 if cmp.visible() then
@@ -90,6 +93,7 @@ in {
           "<S-Tab>" = ''
             cmp.mapping(
               function(fallback)
+                local luasnip = require("luasnip")
                 if cmp.visible() then
                   cmp.select_prev_item(${selectOpts})
                 elseif luasnip.jumpable(-1) then
