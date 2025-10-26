@@ -1,5 +1,8 @@
-{lib, config, ...}:
-let
+{
+  lib,
+  config,
+  ...
+}: let
   supermavenSource = {
     name = "supermaven";
   };
@@ -52,7 +55,7 @@ in
           # Function to determine when supermaven should activate.
           condition = lib.nixvim.mkRaw ''
             function()
-              return true
+              return false
             end
           '';
         };
