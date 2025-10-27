@@ -11,6 +11,7 @@
     ./magic/lsp.nix #
     ./magic/formatting.nix #
     ./magic/treesitter.nix # Treesitter syntax highlighting and indent
+    ./magic/opencode.nix
 
     # Editor Tools
     ./editor/auto-save.nix # Auto-save buffers proactively
