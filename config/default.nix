@@ -39,8 +39,9 @@
     ./ui/colorizer.nix # Display color codes inline
     ./ui/illuminate.nix # Highlight other occurrences of word under cursor
     ./ui/lualine.nix # Lualine statusline setup
-    ./ui/noice.nix # Noice enhanced command-line and messaging UI
-    ./ui/notify.nix # Notify styled notification popups
+    # ./ui/noice.nix # Noice enhanced command-line and messaging UI
+    # ./ui/notify.nix # Notify styled notification popups
+    ./ui/snacks.nix
     ./ui/nvim-lightbulb.nix # Lightbulb indicator for code actions
     ./ui/themes.nix # Onedark colorscheme configuration
     ./ui/transparent.nix # Transparent background highlight groups
