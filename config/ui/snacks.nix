@@ -2,8 +2,10 @@
   plugins.snacks = {
     enable = true;
     settings = {
-      notifer = {
+      notify.enable = true;
+      notifier = {
         enable = true;
+        style = "fancy";
       };
     };
   };
