@@ -6,7 +6,7 @@ lib.mkMerge [
       inlayHints = true;
       keymaps = {
         diagnostic = {
-          "<leader>E" = "open_float";
+          # "<leader>E" = "open_float";
           "[" = "goto_prev";
           "]" = "goto_next";
           "<leader>do" = "setloclist";
@@ -14,10 +14,10 @@ lib.mkMerge [
         lspBuf = {
           "K" = "hover";
           "gD" = "declaration";
-          "gd" = "definition";
-          "gr" = "references";
-          "gI" = "implementation";
-          "gy" = "type_definition";
+          # "gd" = "definition";
+          # "gr" = "references";
+          # "gI" = "implementation";
+          # "gy" = "type_definition";
           "<leader>ca" = "code_action";
           "<leader>cr" = "rename";
           "<leader>wr" = "remove_workspace_folder";

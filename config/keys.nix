@@ -67,7 +67,7 @@
       options.desc = "Undo breakpoint";
     }
 
-    # SOPS
+    # SOPS TODO: - setup SOPS in nix
     {
       mode = "n";
       key = "<leader>od";
@@ -108,18 +108,18 @@
     #   action = "<c-w>";
     #   options.desc = "Windows";
     # }
-    {
-      mode = "n";
-      key = "<leader>-";
-      action = "<C-W>s";
-      options.desc = "Split Window Below";
-    }
-    {
-      mode = "n";
-      key = "<leader>|";
-      action = "<C-W>v";
-      options.desc = "Split Window Right";
-    }
+    # {
+    #   mode = "n";
+    #   key = "<leader>-";
+    #   action = "<C-W>s";
+    #   options.desc = "Split Window Below";
+    # }
+    # {
+    #   mode = "n";
+    #   key = "<leader>|";
+    #   action = "<C-W>v";
+    #   options.desc = "Split Window Right";
+    # }
     # {
     #   mode = "n";
     #   key = "<leader>wd";
