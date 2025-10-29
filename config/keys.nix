@@ -17,11 +17,6 @@
         group = "SOPS";
         icon = "";
       }
-      {
-        __unkeyed-1 = "<leader>a";
-        group = "Avante";
-        icon = "󰬈";
-      }
     ];
   };
 
@@ -51,14 +46,6 @@
       action = "<CMD>noh<CR><ESC>";
       options.desc = "Normal mode and clear highlight";
     }
-
-    # Hop command
-    # {
-    #   mode = "n";
-    #   key = "m";
-    #   action = "<CMD>HopChar1<CR>";
-    #   options.desc = "Hop Char 1";
-    # }
 
     # Add undo breakpoints
     {
@@ -209,5 +196,14 @@
       action = "<CMD>bd<CR>";
       options.desc = "Delete Buffer and Window";
     }
+
+    # TODO: Figure out an easy way to leave terminal mode
+    # # Terminal mode
+    # {
+    #   mode = "t";
+    #   key = "<C-;>";
+    #   action = "<C-\><C-n>";
+    #   options.desc = "Exit terminal mode without sending escape";
+    # }
   ];
 }

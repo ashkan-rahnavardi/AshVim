@@ -1,4 +1,4 @@
-{lib, ...}: let
+{...}: let
   selectOpts = "{behavior = cmp.SelectBehavior.Select}";
 in {
   plugins = {
@@ -21,19 +21,6 @@ in {
         snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
         formatting = {
           fields = ["menu" "abbr" "kind"];
-          format = ''
-            function(entry, item)
-              local menu_icon = {
-                nvim_lsp = '[LSP]',
-                luasnip = '[SNIP]',
-                buffer = '[BUF]',
-                path = '[PATH]',
-              }
-
-              item.menu = menu_icon[entry.source.name]
-              return item
-            end
-          '';
         };
         mapping = {
           "<Up>" = "cmp.mapping.select_prev_item(${selectOpts})";
@@ -140,6 +127,9 @@ in {
       };
     };
     cmp-nvim-lsp.enable = true;
+    lspkind.enable = true;
+    lspkind.cmp.enable = true;
+    luasnip.enable = true;
     cmp-buffer.enable = true;
     cmp-path.enable = true;
     cmp-treesitter.enable = true;

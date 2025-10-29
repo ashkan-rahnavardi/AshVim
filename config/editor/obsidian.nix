@@ -13,7 +13,7 @@
             path = "~/Documents/Notes";
           }
         ];
-        notes_subdir = "/notes";
+        notes_subdir = "notes";
         new_notes_location = "notes_subdir";
       };
     };

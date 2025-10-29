@@ -18,7 +18,7 @@
         suggestion_color = "#ffffff";
         cterm = 244;
       };
-      log_level = "info";
+      log_level = "warn"; # Reduce log level to avoid errors
       disable_inline_completion = false;
       disable_keymaps = false;
 

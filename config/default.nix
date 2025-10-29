@@ -18,7 +18,6 @@
     ./editor/dadbod.nix # Dadbod database UI and completion
     ./editor/gitsigns.nix # Git gutter signs and blame
     ./editor/lazygit.nix # LazyGit terminal interface shortcut
-    ./editor/luasnip.nix # LuaSnip snippet engine
     ./editor/mini.nix # mini.nvim extras (ai, surround, indentscope)
     ./editor/nvim-autopairs.nix # Auto insert matching pairs
     ./editor/obsidian.nix # Obsidian vault integration
