@@ -9,9 +9,6 @@
           just.enable = true;
           opentofu_fmt.enable = true;
           prettierd.enable = true;
-          rubyfmt.enable =
-            pkgs.stdenv.hostPlatform.system != "x86_64-darwin"
-            && pkgs.stdenv.hostPlatform.system != "aarch64-darwin";
           sqlformat.enable = true;
           stylua.enable = true;
           yamlfmt.enable = true;
