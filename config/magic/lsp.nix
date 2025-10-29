@@ -80,7 +80,6 @@ lib.mkMerge [
         marksman.enable = true;
         nixd.enable = true;
         yamlls.enable = true;
-        tailwindcss.enable = true;
         taplo.enable = true;
       };
     };
