@@ -30,4 +30,8 @@
       '';
     };
   };
+
+  plugins.cmp.settings = {
+    sources = lib.mkAfter [{name = "supermaven";}];
+  };
 }
