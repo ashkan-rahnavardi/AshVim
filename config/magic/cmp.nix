@@ -17,6 +17,7 @@ in {
             name = "buffer";
             keywordLength = 1;
           }
+          {name = "luasnip";}
         ];
         snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
         formatting = {
