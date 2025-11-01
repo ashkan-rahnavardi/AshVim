@@ -23,6 +23,7 @@
     ./editor/obsidian.nix # Obsidian vault integration
     ./editor/render-markdown.nix # Markdown renderer module (disabled)
     ./editor/ts-autotag.nix # Auto close and rename HTML/TSX tags
+    ./editor/sops.nix
 
     # Navigation Tools
     ./nav/dashboard.nix # Alpha dashboard start screen
@@ -30,9 +31,9 @@
     ./nav/harpoon.nix # Harpoon quick file navigation marks
     ./nav/oil.nix # Oil buffer-based file explorer
     ./nav/outline.nix # Symbols outline sidebar
-    ./nav/tmux-navigator.nix # Shared tmux and Neovim pane navigation
     ./nav/todo-comments.nix # Highlight and list TODO-style comments
     ./nav/ufo.nix # UFO folding controls and keymaps
+    # ./nav/tmux-navigator.nix # Shared tmux and Neovim pane navigation
 
     # UI enhancements
     ./ui/bufferline.nix # Bufferline tabline with diagnostics

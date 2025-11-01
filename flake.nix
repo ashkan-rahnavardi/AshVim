@@ -20,7 +20,6 @@
         "aarch64-darwin"
       ];
 
-
       perSystem = {system, ...}: let
         overlays = [(import rust-overlay)];
         nixvimLib = nixvim.lib.${system};
@@ -31,13 +30,6 @@
             imports = [
               ./config
               ./config/languages/javascript
-              # ./config/php
-            ];
-            extraPackages = with pkgs; [
-              sops
-              # php82Packages.php-cs-fixer
-              shfmt
-              eslint
             ];
           };
           extraSpecialArgs = {};
@@ -49,11 +41,6 @@
               ./config
               ./config/languages/rust
             ];
-            extraPackages = with pkgs; [
-              sops
-              shfmt
-              rust-bin.stable.latest.default
-            ];
           };
           extraSpecialArgs = {};
         };
@@ -63,10 +50,6 @@
             imports = [
               ./config
               ./config/languages/csharp
-            ];
-            extraPackages = with pkgs; [
-              sops
-              shfmt
             ];
           };
           extraSpecialArgs = {};
@@ -78,10 +61,6 @@
               ./config
               ./config/languages/golang
             ];
-            extraPackages = with pkgs; [
-              sops
-              shfmt
-            ];
           };
           extraSpecialArgs = {};
         };
@@ -91,10 +70,6 @@
             imports = [
               ./config
               ./config/languages/python
-            ];
-            extraPackages = with pkgs; [
-              sops
-              shfmt
             ];
           };
           extraSpecialArgs = {};
@@ -106,10 +81,6 @@
               ./config
               ./config/languages/javascript
             ];
-            extraPackages = with pkgs; [
-              sops
-              shfmt
-            ];
           };
           extraSpecialArgs = {};
         };
@@ -119,10 +90,6 @@
             imports = [
               ./config
               # ./config/php
-            ];
-            extraPackages = with pkgs; [
-              shfmt
-              # php82Packages.php-cs-fixer
             ];
           };
           extraSpecialArgs = {};

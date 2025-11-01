@@ -1,0 +1,3 @@
+{pkgs, ...}: {
+  extraPackages = [pkgs.sops];
+}

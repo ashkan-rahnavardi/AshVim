@@ -5,9 +5,6 @@
       sources = {
         formatting = {
           alejandra.enable = true;
-          hclfmt.enable = true;
-          just.enable = true;
-          opentofu_fmt.enable = true;
           prettierd.enable = true;
           sqlformat.enable = true;
           stylua.enable = true;
@@ -32,16 +29,16 @@
           css = ["prettierd"];
           html = ["prettierd"];
           json = ["prettierd"];
-          just = ["just"];
           lua = ["stylua"];
           sh = ["shfmt"];
           nix = ["alejandra"];
-          ruby = ["rubyfmt"];
-          terraform = ["tofu_fmt"];
-          tf = ["tofu_fmt"];
           yaml = ["yamlfmt"];
         };
       };
     };
   };
+
+  extraPackages = with pkgs; [
+    shfmt
+  ];
 }
