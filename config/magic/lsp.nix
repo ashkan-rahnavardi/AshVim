@@ -32,6 +32,14 @@ lib.mkMerge [
             border = 'rounded',
             source = 'always',
           },
+          signs = {
+            text = {
+              [vim.diagnostic.severity.ERROR] = " ",
+              [vim.diagnostic.severity.WARN] = " ",
+              [vim.diagnostic.severity.HINT] = " ",
+              [vim.diagnostic.severity.INFO] = " ",
+            },
+          },
         })
 
         vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
@@ -45,12 +53,6 @@ lib.mkMerge [
         )
       '';
       postConfig = ''
-        local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-        for type, icon in pairs(signs) do
-          local hl = "DiagnosticSign" .. type
-          vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-        end
-
         local function list_workspace_folders_notify()
           local folders = vim.lsp.buf.list_workspace_folders()
           if not folders or vim.tbl_isempty(folders) then

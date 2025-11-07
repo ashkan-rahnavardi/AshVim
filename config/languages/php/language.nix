@@ -71,7 +71,7 @@ in {
             ];
             files = {
               associations = ["*.php" "*.blade.php"];
-              exclude = ["**/vendor/**"];
+              # exclude = ["**/vendor/**"];
             };
           };
         };
