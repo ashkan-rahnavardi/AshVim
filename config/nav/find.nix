@@ -66,25 +66,25 @@ lib.mkMerge [
       {
         mode = "n";
         key = "gd";
-        action = "<CMD>FzfLua lsp_definitions jump_to_single_result=true ignore_current_line=true<CR>";
+        action = "<CMD>FzfLua lsp_definitions jump1=true ignore_current_line=true<CR>";
         options.desc = "Goto Definition";
       }
       {
         mode = "n";
         key = "gr";
-        action = "<CMD>FzfLua lsp_references jump_to_single_result=true ignore_current_line=true<CR>";
+        action = "<CMD>FzfLua lsp_references jump1=true ignore_current_line=true<CR>";
         options.desc = "References";
       }
       {
         mode = "n";
         key = "gI";
-        action = "<CMD>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<CR>";
+        action = "<CMD>FzfLua lsp_implementations jump1=true ignore_current_line=true<CR>";
         options.desc = "Goto Implementation";
       }
       {
         mode = "n";
         key = "gy";
-        action = "<CMD>FzfLua lsp_typedefs jump_to_single_result=true ignore_current_line=true<CR>";
+        action = "<CMD>FzfLua lsp_typedefs jump1=true ignore_current_line=true<CR>";
         options.desc = "Goto T[y]pe Definition";
       }
     ];

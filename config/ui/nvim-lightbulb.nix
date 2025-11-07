@@ -1,3 +1,3 @@
 {
-  plugins.nvim-lightbulb.enable = true;
+  plugins.nvim-lightbulb.enable = false;
 }

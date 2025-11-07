@@ -42,7 +42,7 @@
     ./ui/lualine.nix # Lualine statusline setup
     ./ui/noice.nix # Noice enhanced command-line and messaging UI
     ./ui/notify.nix # Notify styled notification popups
-    ./ui/nvim-lightbulb.nix # Lightbulb indicator for code actions
+    # ./ui/nvim-lightbulb.nix # Lightbulb indicator for code actions
     ./ui/themes.nix # Onedark colorscheme configuration
     ./ui/transparent.nix # Transparent background highlight groups
     ./ui/trouble.nix # Trouble diagnostics and lists UI
