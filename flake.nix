@@ -15,8 +15,6 @@
     flake-parts.lib.mkFlake {inherit inputs;} {
       systems = [
         "x86_64-linux"
-        "aarch64-linux"
-        "x86_64-darwin"
         "aarch64-darwin"
       ];
 
@@ -29,7 +27,6 @@
           module = {pkgs, ...}: {
             imports = [
               ./config
-              ./config/languages/javascript
             ];
           };
           extraSpecialArgs = {};
@@ -89,7 +86,8 @@
           module = {pkgs, ...}: {
             imports = [
               ./config
-              # ./config/php
+              ./config/languages/php
+              ./config/languages/javascript
             ];
           };
           extraSpecialArgs = {};

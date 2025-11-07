@@ -2,30 +2,51 @@
   lib,
   pkgs,
   ...
-}: {
+}: let
+  # Package Laravel IDE Helper stubs
+  laravelIdeHelper = pkgs.fetchFromGitHub {
+    owner = "barryvdh";
+    repo = "laravel-ide-helper";
+    rev = "v2.13.0";
+    sha256 = "05b8m1525h4ywyxlhgsw9w6c4byipbzngcw59xfcwl2giyr1qhsg";
+  };
+
+  # Package Laravel Framework stubs
+  laravelFramework = pkgs.fetchFromGitHub {
+    owner = "laravel";
+    repo = "framework";
+    rev = "v10.48.0";
+    sha256 = "1fjl8mxf2qdcz96chc7p5mnx8gwymv2b73yb7ar3b45gwbjqmx7k";
+  };
+in {
   plugins = {
+    treesitter = {
+      settings = {
+        ensure_installed = ["php" "blade"];
+      };
+    };
     conform-nvim = {
       enable = true;
       settings = {
-        formatters_by_ft.php = ["php"];
+        formatters_by_ft = {
+          php = ["php"];
+          blade = ["blade-formatter"];
+        };
         formatters = {
           php = {
-            command = "${lib.getExe pkgs.php82Packages.php-cs-fixer}";
+            command = "${lib.getExe pkgs.php84Packages.php-cs-fixer}";
             args = ["fix" "$FILENAME"];
+            stdin = false;
+          };
+          blade-formatter = {
+            command = "${lib.getExe pkgs.blade-formatter}";
+            args = ["--write" "$FILENAME"];
             stdin = false;
           };
         };
       };
     };
     lsp.servers = {
-      # phpactor = {
-      #   enable = true;
-      #   rootDir = ''
-      #     function(fname)
-      #       return vim.fn.getcwd()
-      #     end
-      #   '';
-      # };
       intelephense = {
         enable = true;
         package = pkgs.nodePackages.intelephense;
@@ -34,63 +55,35 @@
             format = {
               enable = true;
               indentStyle = "space";
-              indentSize = 7;
+              indentSize = 4;
             };
-            stubs = ["wordpress" "woocommerce-stubs" "wordpress-globals" "acf-pro" "polylang" "wp-cli" "genesis" "Core" "standard"];
-            environment.includePaths = ["/home/ash/.config/composer/vendor/php-stubs/"];
-            # environment.includePaths = ["/home/ash/projects/work/rtb/website/"];
+            stubs = [
+              "Core"
+              "standard"
+              "laravel"
+              "illuminate"
+              "blade"
+              "psr-4"
+            ];
+            environment.includePaths = [
+              "${laravelIdeHelper}"
+              "${laravelFramework}"
+            ];
+            files = {
+              associations = ["*.php" "*.blade.php"];
+              exclude = ["**/vendor/**"];
+            };
           };
         };
       };
-      # intelephense = {
-      # enable = true;
-      # rootDir = ''
-      #   function(fname)
-      #     return vim.fn.getcwd()
-      #   end
-      # '';
-      # package = pkgs.nodePackages.intelephense;
-      # extraOptions = {
-      #   capabilities = {
-      #     textDocument = {
-      #       formatting = true; # Enable document formatting
-      #       onTypeFormatting = true; # Enable on-type formatting
-      #     };
-      #   };
-      # };
-      # onAttach.function = ''
-      #   vim.api.nvim_create_autocmd('BufWritePre', {
-      #     buffer = bufnr,
-      #     callback = function()
-      #       vim.lsp.buf.format({
-      #         async = false,
-      #         filter = function(client)
-      #           return client.name == "intelephense"
-      #         end,
-      #       })
-      #     end,
-      #   })
-      # '';
-      #   settings = {
-      #     intelephense = {
-      #       format = {
-      #         enable = true;
-      #         indentStyle = "space";
-      #         indentSize = 7;
-      #       };
-      #       stubs = ["wordpress" "woocommerce" "wordpress-globals" "acf-pro" "polylang" "wp-cli" "genesis" "Core"];
-      #       environment.includePaths = "/home/ash/.config/composer/vendor/php-stubs/";
-      #     };
-      #   };
-      # };
-      # intelephense = {
-      #   enable = true;
-      #   settings = {
-      #     stubs = ["wordpress" "woocommerce" "wordpress-globals"];
-      #     environment.includePaths = "/home/ash/.config/composer/vendor/php-stubs/";
-      #     foo_bar = 42;
-      #   };
-      # };
     };
   };
+
+  extraPackages = with pkgs; [
+    php84Packages.composer
+    php84Packages.php-cs-fixer
+    blade-formatter
+    php84
+    yarn
+  ];
 }
