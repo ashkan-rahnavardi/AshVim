@@ -1,4 +1,7 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  ...
+}: {
   plugins = {
     none-ls = {
       enable = true;
@@ -20,10 +23,10 @@
     conform-nvim = {
       enable = true;
       settings = {
-        format_on_save = {
-          lsp_fallback = "fallback";
-          timeout_ms = 500;
-        };
+        # format_on_save = {
+        #   lsp_fallback = "fallback";
+        #   timeout_ms = 500;
+        # };
         notify_on_error = true;
         formatters_by_ft = {
           css = ["prettierd"];
@@ -37,6 +40,15 @@
       };
     };
   };
+
+  keymaps = [
+    {
+      mode = "n";
+      key = "<leader>af";
+      action = "<CMD>lua require('conform').format()<CR>";
+      options.desc = "Format buffer";
+    }
+  ];
 
   extraPackages = with pkgs; [
     shfmt

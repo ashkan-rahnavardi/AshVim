@@ -197,6 +197,8 @@
       options.desc = "Delete Buffer and Window";
     }
 
+    # Formatting
+
     # TODO: Figure out an easy way to leave terminal mode
     # # Terminal mode
     # {
